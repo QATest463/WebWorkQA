@@ -1,5 +1,10 @@
-# (Test Type) API – (Module Name)
+# Security API Test Cases – Screenshots Module
 
-| ID                              | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
-|---------------------------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
-| (ModuleName)-API-(TestType)-XXX |       |         |  |  |               |        |
+| ID             | Title                                              | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-----------------|----------------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| SS-API-SC-001   | Unauthorized access returns 401                    | None                                | 1. Send GET to /api/screenshots without auth token <br> 2. Observe response | 401 Unauthorized error returned |               |        |
+| SS-API-SC-002   | Role-based access enforced for viewing             | User with limited role              | 1. Send GET to /api/screenshots with filters <br> 2. Observe response | Only authorized screenshots returned |               |        |
+| SS-API-SC-003   | Secure download links require authentication       | None                                | 1. Attempt GET to /api/screenshots/{id}/download without token <br> 2. Observe response | 401 Unauthorized error returned |               |        |
+| SS-API-SC-004   | Enforce HTTPS-only connections                      | None                                | 1. Attempt request over HTTP <br> 2. Observe behavior | Server redirects to HTTPS or blocks insecure request |               |        |
+| SS-API-SC-005   | Validation against tampered delete requests         | User authenticated                  | 1. Modify request payload to include invalid or unauthorized screenshot IDs <br> 2. Send DELETE or POST request <br> 3. Observe response | Server rejects with 403 Forbidden or validation error |               |        |
+| SS-API-SC-006   | Rate limiting on bulk operations enforced           | User with delete/download permissions | 1. Send rapid multiple bulk DELETE/POST requests <br> 2. Observe response | Server enforces rate limits or returns error after threshold |               |        |

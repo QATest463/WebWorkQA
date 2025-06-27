@@ -1,5 +1,10 @@
-# (Test Type) API – (Module Name)
+# Negative API Test Cases – Screenshots Module
 
-| ID                              | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
-|---------------------------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
-| (ModuleName)-API-(TestType)-XXX |       |         |  |  |               |        |
+| ID             | Title                                              | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-----------------|----------------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| SS-API-NT-001   | Invalid filter parameters return validation error | User authenticated                  | 1. Send GET to /api/screenshots with invalid filter params <br> 2. Observe response | 400 Bad Request with validation error |               |        |
+| SS-API-NT-002   | Empty date range returns "No data available"      | User authenticated                  | 1. Send GET to /api/screenshots with date range with no data <br> 2. Observe response | 200 OK with empty array or clear message |               |        |
+| SS-API-NT-003   | Attempt to download non-existent screenshot       | User authenticated                  | 1. Send GET to /api/screenshots/{invalidId}/download <br> 2. Observe response | 404 Not Found error |               |        |
+| SS-API-NT-004   | Attempt to delete non-existent screenshot         | User with delete permissions        | 1. Send DELETE to /api/screenshots/{invalidId} <br> 2. Observe response | 404 Not Found error |               |        |
+| SS-API-NT-005   | Attempt to delete without permissions             | User without delete permissions     | 1. Send DELETE to /api/screenshots/{id} <br> 2. Observe response | 403 Forbidden error |               |        |
+| SS-API-NT-006   | Bulk delete with mixed valid/invalid IDs          | User with delete permissions        | 1. Send POST to /api/screenshots/delete with some invalid IDs <br> 2. Observe response | Server handles gracefully: partial success or validation error |               |        |

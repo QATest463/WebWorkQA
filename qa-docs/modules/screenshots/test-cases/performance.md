@@ -1,5 +1,10 @@
-# (Test Type) – (Module Name)
+# Performance Test Cases – Screenshots Module
 
-| ID                          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
-|-----------------------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
-| (ModuleName)-(TestType)-XXX |       |         |  |  |               |        |
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| SS-PF-001   | Screenshots page load time                  | User logged in                      | 1. Navigate to Screenshots page <br> 2. Measure load time | Page loads within acceptable threshold (e.g. <2s) |               |        |
+| SS-PF-002   | Filtered search response time               | User with large data set            | 1. Apply filters with many results <br> 2. Measure response time | Filtered results returned within acceptable time (e.g. <2s) |               |        |
+| SS-PF-003   | Pagination performance with large dataset   | User with many screenshots          | 1. Navigate through multiple pages <br> 2. Measure page switching time | Page changes without noticeable delay or freezing |               |        |
+| SS-PF-004   | Bulk download operation time                | User with download permissions      | 1. Select many screenshots <br> 2. Click Download <br> 3. Measure time to prepare/download | Download completes within acceptable time (e.g. <5s) |               |        |
+| SS-PF-005   | Bulk delete operation time                  | User with delete permissions        | 1. Select many screenshots <br> 2. Click Delete <br> 3. Measure operation time | Bulk delete completes without timeout or crash |               |        |
+| SS-PF-006   | Concurrent filter and pagination requests   | User logged in                      | 1. Rapidly change filters and pages <br> 2. Observe system behavior | System handles concurrent requests gracefully without errors |               |        |

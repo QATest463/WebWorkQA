@@ -1,0 +1,12 @@
+# UI/UX Test Cases – Screenshots Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| SS-UX-001   | Clear and readable grid/list layout         | User logged in                      | 1. Navigate to Screenshots page <br> 2. Observe the grid or list layout | Screenshots displayed in clear, aligned grid or list, readable labels |               |        |
+| SS-UX-002   | Responsive design on mobile devices         | User on mobile device               | 1. Open Screenshots page on mobile <br> 2. Interact with filters and images | Layout adapts without horizontal scroll, controls usable |               |        |
+| SS-UX-003   | Filter controls easy to use and accessible  | User logged in                      | 1. Go to Screenshots page <br> 2. Interact with filter panel | Filters are easy to open, set, and clear without confusion |               |        |
+| SS-UX-004   | Download and Delete buttons visible         | User with permissions               | 1. Go to Screenshots page <br> 2. Select screenshots <br> 3. Observe controls | Download/Delete buttons clearly visible and accessible |               |        |
+| SS-UX-005   | Loading indicators during heavy operations  | User logged in                      | 1. Generate large query or bulk download/delete <br> 2. Observe UI | System shows loading spinners or messages indicating progress |               |        |
+| SS-UX-006   | Error messages for invalid filters          | User enters invalid data            | 1. Enter invalid filter values <br> 2. Click Apply | System shows clear, actionable error message |               |        |
+| SS-UX-007   | Accessibility for keyboard navigation       | User using keyboard only            | 1. Navigate through Screenshots page with Tab key <br> 2. Observe focus behavior | All interactive elements accessible via keyboard |               |        |
+| SS-UX-008   | Consistent styling across browsers          | User on different browsers          | 1. Open Screenshots page in Chrome, Firefox, Safari, Edge <br> 2. Compare layout | Styling and layout consistent across browsers |               |        |

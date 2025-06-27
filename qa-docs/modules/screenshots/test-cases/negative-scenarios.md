@@ -1,5 +1,11 @@
-# (Test Type) – (Module Name)
+# Negative Test Cases – Screenshots Module
 
-| ID                          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
-|-----------------------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
-| (ModuleName)-(TestType)-XXX |       |         |  |  |               |        |
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| SS-NT-001   | Attempt to view screenshots without authentication | User logged out                    | 1. Access /screenshots page <br> 2. Observe behavior | User is redirected to login or sees access denied |               |        |
+| SS-NT-002   | Apply invalid date format in filter         | User logged in                      | 1. Go to Screenshots page <br> 2. Enter invalid date format in filter <br> 3. Click Apply | System shows validation error and blocks request |               |        |
+| SS-NT-003   | Filter screenshots with no matching data    | User logged in                      | 1. Go to Screenshots page <br> 2. Set date range or filters with no data <br> 3. Click Apply | System shows "No data available" message without error |               |        |
+| SS-NT-004   | Attempt to delete without selecting screenshots | User with delete permissions       | 1. Go to Screenshots page <br> 2. Click Delete button without selecting any screenshots | System disables button or shows validation error |               |        |
+| SS-NT-005   | Attempt to download without selecting screenshots | User logged in                      | 1. Go to Screenshots page <br> 2. Click Download without selecting any images | System disables button or shows clear message |               |        |
+| SS-NT-006   | User without delete permissions attempts delete | User without permissions            | 1. Log in with limited role <br> 2. Go to Screenshots page <br> 3. Attempt to click Delete | Delete button is hidden or disabled for this role |               |        |
+| SS-NT-007   | Attempt to tamper with screenshot ID in URL or request | User logged in                      | 1. Modify request to include invalid or unauthorized screenshot ID <br> 2. Send request | Server returns 403 Forbidden or validation error |               |        |
