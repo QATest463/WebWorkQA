@@ -1,0 +1,11 @@
+# Security API Test Cases – Activity and Productivity Module
+
+| ID               | Title                                           | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------------|-------------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| AP-API-SC-001     | Unauthorized access returns 401                 | None                                | 1. Send request to /api/activity endpoints without auth <br> 2. Observe response | 401 Unauthorized error returned |               |        |
+| AP-API-SC-002     | Only authenticated users can start tracking     | User not logged in                  | 1. Attempt POST to /api/activity/start without auth <br> 2. Observe response | 401 Unauthorized error returned |               |        |
+| AP-API-SC-003     | Role-based access enforced for managers         | Manager logged in                   | 1. Manager requests team reports <br> 2. Observe access | Allowed for managers, blocked for regular users |               |        |
+| AP-API-SC-004     | User can only modify own activity data          | User logged in                      | 1. Attempt to modify another user's activity via API <br> 2. Observe response | 403 Forbidden or validation error |               |        |
+| AP-API-SC-005     | Validation against tampered activity IDs        | User authenticated                  | 1. Modify request with invalid or unauthorized ID <br> 2. Send request | 403 Forbidden or validation error |               |        |
+| AP-API-SC-006     | Secure storage and transmission of activity logs | User authenticated                 | 1. Observe network traffic during API calls <br> 2. Check encryption | Data transmitted over HTTPS only |               |        |
+| AP-API-SC-007     | Enforce HTTPS-only connections                  | None                                | 1. Attempt to access API over HTTP <br> 2. Observe behavior | Server redirects to HTTPS or blocks insecure request |               |        |

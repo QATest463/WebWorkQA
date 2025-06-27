@@ -1,0 +1,11 @@
+# Performance Test Cases – Activity and Productivity Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| AP-PF-001   | Start tracking response time                | User logged in                      | 1. Click Start Tracking <br> 2. Measure response time | Tracking starts within acceptable time (e.g. <1s) |               |        |
+| AP-PF-002   | Stop tracking response time                 | User tracking activity              | 1. Click Stop Tracking <br> 2. Measure response time | Tracking stops within acceptable time |               |        |
+| AP-PF-003   | Log retrieval with large data set           | User with many tracked entries      | 1. Open Activity Log <br> 2. Scroll or paginate | Logs load smoothly without lag or timeout |               |        |
+| AP-PF-004   | Export large productivity data              | User with many records              | 1. Click Export <br> 2. Choose format <br> 3. Confirm | Export completes within acceptable time without errors |               |        |
+| AP-PF-005   | Categorization save time                    | User logged in                      | 1. Assign categories <br> 2. Click Save | Save completes quickly with confirmation |               |        |
+| AP-PF-006   | Filtering and searching logs response time  | User with many records              | 1. Enter search/filter criteria <br> 2. Apply | Results return within acceptable time (e.g. <2s) |               |        |
+| AP-PF-007   | Simultaneous tracking conflict resolution   | User logged in on multiple devices  | 1. Start tracking on device A <br> 2. Start on device B | System prevents duplicates or handles conflict gracefully |               |        |

@@ -1,0 +1,11 @@
+# Security API Test Cases – Settings & Preferences Module
+
+| ID               | Title                                           | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------------|-------------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| SP-API-SC-001     | Unauthorized access returns 401                 | None                                | 1. Send request to /api/settings/user without auth <br> 2. Observe response | 401 Unauthorized error returned |               |        |
+| SP-API-SC-002     | Only authenticated users can update settings   | User not logged in                  | 1. Attempt PUT to /api/settings/user without auth <br> 2. Observe response | 401 Unauthorized error returned |               |        |
+| SP-API-SC-003     | Role-based access enforced for organization settings | Admin authenticated               | 1. Admin requests org settings <br> 2. Make changes | Only Admins can edit organization settings |               |        |
+| SP-API-SC-004     | Regular user cannot access organization settings | User logged in as regular user     | 1. Attempt to access org settings API <br> 2. Observe response | 403 Forbidden error returned |               |        |
+| SP-API-SC-005     | Validation against tampered user IDs            | User authenticated                  | 1. Modify request to edit another user's settings <br> 2. Send request | 403 Forbidden or validation error returned |               |        |
+| SP-API-SC-006     | Secure storage and transmission of settings data | User authenticated                 | 1. Observe network traffic during API calls <br> 2. Check encryption | Data transmitted securely over HTTPS |               |        |
+| SP-API-SC-007     | Enforce HTTPS-only connections                  | None                                | 1. Attempt to access API over HTTP <br> 2. Observe behavior | Server redirects to HTTPS or blocks insecure request |               |        |

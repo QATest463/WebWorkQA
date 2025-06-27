@@ -1,0 +1,12 @@
+# Negative API Test Cases – Activity and Productivity Module
+
+| ID               | Title                                           | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------------|-------------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| AP-API-NT-001     | Start tracking with missing parameters          | User authenticated                  | 1. Send POST with missing required fields <br> 2. Observe response | 400 Bad Request with validation error |               |        |
+| AP-API-NT-002     | Stop tracking with invalid session ID          | User authenticated                  | 1. Send POST with invalid session ID <br> 2. Observe response | 404 Not Found or validation error |               |        |
+| AP-API-NT-003     | Upload malformed activity log                   | User authenticated                  | 1. Send POST with invalid JSON body <br> 2. Observe response | 400 Bad Request with validation error |               |        |
+| AP-API-NT-004     | Attempt to modify another user's activity data  | User authenticated                  | 1. Send PUT with another user's ID <br> 2. Observe response | 403 Forbidden or validation error |               |        |
+| AP-API-NT-005     | Unauthorized access to endpoints                | User not logged in                  | 1. Send request without auth token <br> 2. Observe response | 401 Unauthorized error returned |               |        |
+| AP-API-NT-006     | Assign invalid category data                    | User authenticated                  | 1. Send POST with invalid category fields <br> 2. Observe response | 400 Bad Request with validation error |               |        |
+| AP-API-NT-007     | Filter logs with invalid date range             | User authenticated                  | 1. Send GET with invalid dates <br> 2. Observe response | 400 Bad Request or graceful error |               |        |
+| AP-API-NT-008     | Export with no activity data                    | User authenticated with no logs     | 1. Send GET to /api/activity/export <br> 2. Observe response | 400 Bad Request or empty file with message |               |        |

@@ -1,0 +1,12 @@
+# Functional Test Cases – Access Logs / Audit Trail Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| ALAT-FN-001 | View access logs                            | Admin logged in                     | 1. Navigate to Access Logs page <br> 2. Observe list of logs | Logs displayed with correct details |               |        |
+| ALAT-FN-002 | Filter logs by user                         | Admin logged in                     | 1. Open filter menu <br> 2. Select user <br> 3. Apply filter | Logs filtered to selected user only |               |        |
+| ALAT-FN-003 | Filter logs by date range                   | Admin logged in                     | 1. Open date picker <br> 2. Select date range <br> 3. Apply filter | Logs within selected dates displayed |               |        |
+| ALAT-FN-004 | Filter logs by action type                  | Admin logged in                     | 1. Choose action type filter <br> 2. Apply filter | Logs filtered by action type |               |        |
+| ALAT-FN-005 | Search within logs                          | Admin logged in                     | 1. Enter search keyword <br> 2. Observe results | Logs matching keyword displayed |               |        |
+| ALAT-FN-006 | View detailed log entry                     | Admin logged in                     | 1. Click on log entry <br> 2. Observe details | Detailed log data shown correctly |               |        |
+| ALAT-FN-007 | Export audit trail                          | Admin logged in                     | 1. Click Export button <br> 2. Choose format <br> 3. Download file | File downloaded with complete logs |               |        |
+| ALAT-FN-008 | Pagination of logs                          | Admin logged in                     | 1. View logs with many entries <br> 2. Navigate pages | Pagination works correctly |               |        |

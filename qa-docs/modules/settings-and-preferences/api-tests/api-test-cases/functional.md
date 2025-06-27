@@ -1,0 +1,11 @@
+# Functional API Test Cases – Settings & Preferences Module
+
+| ID               | Title                                           | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------------|-------------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| SP-API-FN-001     | Retrieve user settings                          | User authenticated                  | 1. Send GET to /api/settings/user <br> 2. Observe response | 200 OK with user's settings data |               |        |
+| SP-API-FN-002     | Update notification preferences                 | User authenticated                  | 1. Send PUT to /api/settings/user/notifications with valid data <br> 2. Observe response | 200 OK with updated preferences |               |        |
+| SP-API-FN-003     | Update language preferences                     | User authenticated                  | 1. Send PUT to /api/settings/user/language with valid data <br> 2. Observe response | 200 OK with language preference saved |               |        |
+| SP-API-FN-004     | Update time zone                                | User authenticated                  | 1. Send PUT to /api/settings/user/timezone with valid time zone <br> 2. Observe response | 200 OK with time zone updated |               |        |
+| SP-API-FN-005     | Update working hours                            | User authenticated                  | 1. Send PUT to /api/settings/user/working-hours with valid hours <br> 2. Observe response | 200 OK with working hours saved |               |        |
+| SP-API-FN-006     | Retrieve organization settings (Admin only)     | Admin authenticated                  | 1. Send GET to /api/settings/org <br> 2. Observe response | 200 OK with organization settings data |               |        |
+| SP-API-FN-007     | Update organization settings (Admin only)       | Admin authenticated                  | 1. Send PUT to /api/settings/org with valid data <br> 2. Observe response | 200 OK with updated org settings |               |        |

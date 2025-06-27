@@ -1,0 +1,11 @@
+# Security and Access Test Cases – Settings & Preferences Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| SP-SA-001   | Unauthorized access blocked                 | User not logged in                  | 1. Attempt to access /settings page without authentication | User is redirected to login or shown access denied |               |        |
+| SP-SA-002   | Only authenticated users can edit settings  | User not logged in                  | 1. Attempt POST/PUT to /api/settings without auth <br> 2. Observe response | 401 Unauthorized error returned |               |        |
+| SP-SA-003   | Role-based access enforced for organization settings | Admin user logged in               | 1. Access organization settings <br> 2. Make changes | Only Admin users can edit organization-level settings |               |        |
+| SP-SA-004   | Regular user cannot access organization settings | Regular user logged in             | 1. Attempt to access organization settings URL/API | System returns 403 Forbidden |               |        |
+| SP-SA-005   | Validation against tampered user IDs        | User logged in                      | 1. Modify request to change another user's settings <br> 2. Send request | 403 Forbidden or validation error returned |               |        |
+| SP-SA-006   | Secure storage and transfer of settings data | User logged in                      | 1. Observe network traffic during save <br> 2. Check encryption | Data transmitted securely over HTTPS |               |        |
+| SP-SA-007   | Enforce HTTPS-only connections              | None                                | 1. Attempt to access app over HTTP <br> 2. Observe behavior | Server redirects to HTTPS or blocks insecure request |               |        |

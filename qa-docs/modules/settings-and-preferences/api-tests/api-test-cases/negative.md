@@ -1,0 +1,12 @@
+# Negative API Test Cases – Settings & Preferences Module
+
+| ID               | Title                                           | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------------|-------------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| SP-API-NT-001     | Submit settings with missing required fields    | User authenticated                  | 1. Send PUT with missing required fields <br> 2. Observe response | 400 Bad Request with validation errors |               |        |
+| SP-API-NT-002     | Unsupported language code input                 | User authenticated                  | 1. Send PUT with invalid language code <br> 2. Observe response | 400 Bad Request with validation error |               |        |
+| SP-API-NT-003     | Invalid time zone input                         | User authenticated                  | 1. Send PUT with invalid time zone value <br> 2. Observe response | 400 Bad Request with validation error |               |        |
+| SP-API-NT-004     | Invalid working hours range                     | User authenticated                  | 1. Send PUT with end time before start time <br> 2. Observe response | 400 Bad Request with validation error |               |        |
+| SP-API-NT-005     | Attempt to modify another user's settings       | User authenticated                  | 1. Send PUT with another user's ID <br> 2. Observe response | 403 Forbidden or validation error |               |        |
+| SP-API-NT-006     | Unauthorized API request to settings endpoint   | User not logged in                  | 1. Send request without auth token <br> 2. Observe response | 401 Unauthorized error returned |               |        |
+| SP-API-NT-007     | Malformed JSON body                             | User authenticated                  | 1. Send invalid JSON in request body <br> 2. Observe response | 400 Bad Request with validation error |               |        |
+| SP-API-NT-008     | Partial network failure during save             | User authenticated                  | 1. Disconnect network during save <br> 2. Observe behavior | Graceful error message or retry option |               |        |

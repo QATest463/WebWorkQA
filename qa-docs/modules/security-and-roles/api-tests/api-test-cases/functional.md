@@ -1,0 +1,12 @@
+# Functional API Test Cases – Security and Roles Module
+
+| ID               | Title                                           | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------------|-------------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| SR-API-FN-001     | Create new role                                 | Admin authenticated                 | 1. Send POST to /api/roles with valid data <br> 2. Observe response | 201 Created with role details |               |        |
+| SR-API-FN-002     | Edit existing role                             | Admin authenticated                 | 1. Send PUT to /api/roles/{id} with updated data <br> 2. Observe response | 200 OK with updated role details |               |        |
+| SR-API-FN-003     | Delete role                                   | Admin authenticated                 | 1. Send DELETE to /api/roles/{id} <br> 2. Observe response | 204 No Content |               |        |
+| SR-API-FN-004     | Assign role to user                            | Admin authenticated                 | 1. Send POST to /api/users/{id}/roles with role data <br> 2. Observe response | 200 OK with updated user roles |               |        |
+| SR-API-FN-005     | Retrieve role hierarchy                        | Admin authenticated                 | 1. Send GET to /api/roles/hierarchy <br> 2. Observe response | 200 OK with hierarchy data |               |        |
+| SR-API-FN-006     | Audit trail role changes                       | Admin authenticated                 | 1. Change role permissions <br> 2. Check audit trail logs | Changes recorded successfully |               |        |
+| SR-API-FN-007     | Enforce role-based access                      | User authenticated                 | 1. Attempt restricted action without role <br> 2. Observe response | 403 Forbidden |               |        |
+| SR-API-FN-008     | Role inheritance                              | Admin authenticated                 | 1. Define role inheritance <br> 2. Assign to user <br> 3. Verify permissions | Permissions inherited correctly |               |        |

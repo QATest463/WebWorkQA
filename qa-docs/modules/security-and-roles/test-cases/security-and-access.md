@@ -1,0 +1,10 @@
+# Security and Access Test Cases – Security and Roles Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| SR-SA-001   | Only Admin can manage roles                 | Regular user logged in              | 1. Attempt to access roles management <br> 2. Attempt role changes | Access denied |               |        |
+| SR-SA-002   | Role permissions validation                  | Admin logged in                     | 1. Assign permissions to role <br> 2. Verify enforcement | Permissions enforced correctly |               |        |
+| SR-SA-003   | Prevent privilege escalation                 | Admin logged in                     | 1. Attempt unauthorized permission escalation <br> 2. Observe response | Operation blocked |               |        |
+| SR-SA-004   | Secure storage of role data                   | Admin logged in                     | 1. Access role data storage <br> 2. Verify encryption/security | Data securely stored |               |        |
+| SR-SA-005   | Audit trail records all role changes          | Admin logged in                     | 1. Make role changes <br> 2. Verify audit trail entry | All changes logged |               |        |
+| SR-SA-006   | Enforce authentication and authorization     | User not logged in                  | 1. Attempt role management without login <br> 2. Observe response | Access denied or redirected |               |        |

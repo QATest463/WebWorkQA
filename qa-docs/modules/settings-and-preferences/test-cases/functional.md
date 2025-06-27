@@ -1,0 +1,11 @@
+# Functional Test Cases – Settings & Preferences Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| SP-FN-001   | View personal settings                      | User logged in                      | 1. Navigate to Settings page <br> 2. Observe loaded values | Current user settings displayed correctly |               |        |
+| SP-FN-002   | Edit notification preferences               | User logged in                      | 1. Open Notification Settings <br> 2. Change preferences <br> 3. Click Save | Preferences updated and persisted |               |        |
+| SP-FN-003   | Change language settings                    | User logged in                      | 1. Open Language Settings <br> 2. Select new language <br> 3. Save changes | Language applied across UI |               |        |
+| SP-FN-004   | Set time zone                               | User logged in                      | 1. Open Time Zone Settings <br> 2. Select valid time zone <br> 3. Save changes | Selected time zone saved and reflected |               |        |
+| SP-FN-005   | Define working hours                        | User logged in                      | 1. Open Working Hours Settings <br> 2. Set hours <br> 3. Save changes | Working hours saved and applied |               |        |
+| SP-FN-006   | Preferences persist after logout/login      | User with saved preferences         | 1. Log out <br> 2. Log back in <br> 3. Open Settings | Previously saved preferences still present |               |        |
+| SP-FN-007   | Role-based access to organization settings  | Admin logged in                     | 1. Open Organization Settings <br> 2. Make changes <br> 3. Save | Changes saved for organization, accessible to Admin only |               |        |

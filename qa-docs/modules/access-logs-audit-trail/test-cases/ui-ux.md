@@ -1,0 +1,13 @@
+# UI/UX Test Cases – Access Logs / Audit Trail Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| ALAT-UX-001 | Clear log table layout                      | Admin logged in                     | 1. Open logs page <br> 2. Observe table layout | Columns aligned and data easy to read |               |        |
+| ALAT-UX-002 | Filter UI intuitive                         | Admin logged in                     | 1. Open filter section <br> 2. Observe controls | Filters clearly labeled and easy to use |               |        |
+| ALAT-UX-003 | Search bar clearly visible                  | Admin logged in                     | 1. Look for search input on logs page | Search field easy to find and use |               |        |
+| ALAT-UX-004 | Export button accessible                    | Admin logged in                     | 1. Locate Export button | Button visible, clear, and easy to use |               |        |
+| ALAT-UX-005 | Pagination controls easy to use             | Admin logged in                     | 1. Navigate through log pages | Pagination works smoothly with clear controls |               |        |
+| ALAT-UX-006 | Loading indicators during filter/search     | Admin logged in                     | 1. Apply filter or search <br> 2. Observe UI | System shows loading spinner or message |               |        |
+| ALAT-UX-007 | Detailed log modal clear                    | Admin logged in                     | 1. Open detailed view of log entry | Data well formatted and easy to understand |               |        |
+| ALAT-UX-008 | Responsive design on mobile                 | Admin on mobile device              | 1. Open logs page on mobile <br> 2. Observe layout | Layout adapts without horizontal scrolling |               |        |
+| ALAT-UX-009 | Accessible design for keyboard navigation   | Admin using keyboard only           | 1. Navigate logs page with Tab key <br> 2. Observe focus | All interactive elements accessible via keyboard |               |        |

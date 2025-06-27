@@ -1,0 +1,9 @@
+# Negative Test Cases – Security and Roles Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| SR-NT-001   | Create role with missing required fields   | Admin logged in                     | 1. Navigate to Create Role <br> 2. Leave required fields empty <br> 3. Submit | Validation error displayed, role not created |               |        |
+| SR-NT-002   | Assign role to non-existent user            | Admin logged in                     | 1. Attempt to assign role to invalid user ID <br> 2. Save | Error message displayed, operation blocked |               |        |
+| SR-NT-003   | Delete role assigned to users               | Admin logged in                     | 1. Attempt to delete role currently assigned <br> 2. Confirm deletion | Error or warning preventing deletion |               |        |
+| SR-NT-004   | Unauthorized user attempts role changes     | Regular user logged in              | 1. Attempt to access role management pages <br> 2. Attempt changes | Access denied or redirected |               |        |
+| SR-NT-005   | Circular role inheritance                    | Admin logged in                     | 1. Define roles with circular inheritance <br> 2. Save | System blocks or errors out |               |        |

@@ -1,0 +1,11 @@
+# Security and Access Test Cases – Activity and Productivity Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| AP-SA-001   | Unauthorized access blocked                 | User not logged in                  | 1. Attempt to access /activity page without authentication | User is redirected to login or shown access denied |               |        |
+| AP-SA-002   | Only authenticated users can track activity | User not logged in                  | 1. Send start tracking request without auth <br> 2. Observe response | 401 Unauthorized error returned |               |        |
+| AP-SA-003   | Role-based access enforced for managers     | User logged in as Manager           | 1. Access team productivity reports <br> 2. Observe access | Only managers can view team reports, regular users blocked |               |        |
+| AP-SA-004   | User can only view/edit own productivity categories | User logged in                   | 1. Attempt to edit another user's category <br> 2. Observe response | 403 Forbidden or validation error |               |        |
+| AP-SA-005   | Validation against tampered activity IDs    | User authenticated                  | 1. Modify request with invalid or unauthorized ID <br> 2. Send request | 403 Forbidden or validation error returned |               |        |
+| AP-SA-006   | Secure storage and transfer of activity logs | User logged in                      | 1. Observe network traffic during activity upload | Data transmitted over HTTPS only, no plain text sensitive data |               |        |
+| AP-SA-007   | Enforce HTTPS-only connections              | None                                | 1. Attempt to access app over HTTP <br> 2. Observe behavior | Server redirects to HTTPS or blocks insecure request |               |        |

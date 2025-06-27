@@ -1,0 +1,11 @@
+# Edge Cases – Access Logs / Audit Trail Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| ALAT-EC-001 | Load large volume of logs                   | Admin logged in                     | 1. Navigate to logs page with many entries | System loads logs without crashing or significant delay |               |        |
+| ALAT-EC-002 | Rapid filter usage                          | Admin logged in                     | 1. Rapidly apply/remove different filters | System processes changes smoothly without errors |               |        |
+| ALAT-EC-003 | Rapid search input changes                  | Admin logged in                     | 1. Enter/change search terms quickly | System handles changes gracefully |               |        |
+| ALAT-EC-004 | Very long date range filter                 | Admin logged in                     | 1. Select very long date range <br> 2. Apply filter | System returns all results correctly |               |        |
+| ALAT-EC-005 | Multiple simultaneous export requests       | Admin logged in                     | 1. Start multiple export actions quickly | System handles without crashing or blocking UI |               |        |
+| ALAT-EC-006 | Special characters in search                | Admin logged in                     | 1. Enter special characters in search field | System sanitizes input or returns no results without error |               |        |
+| ALAT-EC-007 | Partial network failure during export       | Admin logged in                     | 1. Start export <br> 2. Disconnect network mid-download | System shows error or allows retry |               |        |

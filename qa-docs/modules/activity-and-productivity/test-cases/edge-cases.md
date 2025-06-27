@@ -1,0 +1,11 @@
+# Edge Cases – Activity and Productivity Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| AP-EC-001   | Very long tracking session                  | User logged in                      | 1. Start tracking <br> 2. Let it run for many hours <br> 3. Stop tracking | System handles session gracefully, no crashes, accurate logs |               |        |
+| AP-EC-002   | Simultaneous tracking on multiple devices   | User logged in on two devices       | 1. Start tracking on device A <br> 2. Start on device B <br> 3. Observe logs | System handles conflict or prevents duplicate tracking |               |        |
+| AP-EC-003   | High-frequency app/website switching        | User tracking activity              | 1. Rapidly switch between apps/websites <br> 2. Observe logs | System accurately logs all switches without missing entries |               |        |
+| AP-EC-004   | Network disconnect/reconnect during tracking | User tracking activity              | 1. Disconnect network while tracking <br> 2. Reconnect <br> 3. Continue tracking | Tracking resumes or syncs properly without data loss |               |        |
+| AP-EC-005   | Large amount of tracked data export         | User with many records              | 1. Click Export <br> 2. Choose format <br> 3. Confirm | System generates and downloads large export without errors |               |        |
+| AP-EC-006   | Categorization with many custom categories  | User logged in                      | 1. Create many categories <br> 2. Assign categories to data | System handles large number of categories without performance issues |               |        |
+| AP-EC-007   | Filtering logs with overlapping date ranges | User logged in                      | 1. Enter overlapping date filters <br> 2. Apply | System returns accurate and non-duplicated results |               |        |

@@ -1,0 +1,10 @@
+# Functional API Test Cases – Access Logs / Audit Trail Module
+
+| ID               | Title                                           | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------------|-------------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| ALAT-API-FN-001   | Retrieve access logs                            | Admin authenticated                 | 1. Send GET to /api/logs <br> 2. Observe response | 200 OK with list of logs |               |        |
+| ALAT-API-FN-002   | Filter logs by user                            | Admin authenticated                 | 1. Send GET with user filter parameter <br> 2. Observe response | Logs filtered by user |               |        |
+| ALAT-API-FN-003   | Filter logs by date range                      | Admin authenticated                 | 1. Send GET with date range params <br> 2. Observe response | Logs within date range |               |        |
+| ALAT-API-FN-004   | Filter logs by action type                     | Admin authenticated                 | 1. Send GET with action type param <br> 2. Observe response | Logs filtered by action |               |        |
+| ALAT-API-FN-005   | Search within logs                             | Admin authenticated                 | 1. Send GET with search query <br> 2. Observe response | Logs matching query |               |        |
+| ALAT-API-FN-006   | Export audit trail                            | Admin authenticated                 | 1. Send GET to /api/logs/export <br> 2. Download file | File downloaded with complete logs |               |        |

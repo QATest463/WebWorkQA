@@ -1,0 +1,9 @@
+# Security API Test Cases – Access Logs / Audit Trail Module
+
+| ID               | Title                                           | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------------|-------------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| ALAT-API-SC-001   | Unauthorized access returns 401                 | User not logged in                  | 1. Send GET to /api/logs without auth <br> 2. Observe response | 401 Unauthorized error returned |               |        |
+| ALAT-API-SC-002   | Role-based access enforcement                   | Regular user authenticated          | 1. Attempt GET to /api/logs <br> 2. Observe response | 403 Forbidden error returned |               |        |
+| ALAT-API-SC-003   | Prevent edit/delete logs via API                 | Admin authenticated                 | 1. Send DELETE/PUT requests to /api/logs <br> 2. Observe response | 403 Forbidden or 405 Method Not Allowed |               |        |
+| ALAT-API-SC-004   | Secure transmission of logs data                | Admin authenticated                 | 1. Monitor network traffic during API calls <br> 2. Verify encryption | Data transmitted securely over HTTPS |               |        |
+| ALAT-API-SC-005   | Enforce HTTPS-only connections                  | None                                | 1. Attempt HTTP connection <br> 2. Observe behavior | Redirected to HTTPS or blocked |               |        |

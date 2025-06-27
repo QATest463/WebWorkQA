@@ -1,0 +1,11 @@
+# Edge Cases – Settings & Preferences Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| SP-EC-001   | Extremely long custom input values          | User logged in                      | 1. Enter very long text in fields <br> 2. Click Save | System limits input length or shows validation error |               |        |
+| SP-EC-002   | Special characters in custom fields         | User logged in                      | 1. Enter special characters <br> 2. Click Save | System sanitizes input or shows error |               |        |
+| SP-EC-003   | Unsupported language selection              | User logged in                      | 1. Attempt to select unsupported language code <br> 2. Save | System blocks with validation error |               |        |
+| SP-EC-004   | Invalid time zone input                     | User logged in                      | 1. Enter invalid time zone <br> 2. Click Save | System blocks save with error |               |        |
+| SP-EC-005   | Simultaneous edits from multiple devices    | User logged in on two devices       | 1. Open Settings on both devices <br> 2. Change settings on both <br> 3. Save both | System resolves conflicts or last save wins |               |        |
+| SP-EC-006   | Partial network failure during save         | User logged in                      | 1. Disconnect network during save <br> 2. Reconnect <br> 3. Retry save | System handles gracefully, no corruption |               |        |
+| SP-EC-007   | Unsupported time format in working hours    | User logged in                      | 1. Enter invalid time format <br> 2. Click Save | System blocks with validation error |               |        |

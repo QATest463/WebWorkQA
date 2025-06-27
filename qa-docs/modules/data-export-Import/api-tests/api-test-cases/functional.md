@@ -1,0 +1,12 @@
+# Functional API Test Cases – Data Export / Import Module
+
+| ID               | Title                                           | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------------|-------------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| DEI-API-FN-001    | Export user activity logs                       | Admin authenticated                 | 1. Send GET to /api/export/activity-logs <br> 2. Observe response | 200 OK with file download link |               |        |
+| DEI-API-FN-002    | Export timesheets                               | Admin authenticated                 | 1. Send GET to /api/export/timesheets <br> 2. Observe response | 200 OK with file download link |               |        |
+| DEI-API-FN-003    | Export reports                                  | Admin authenticated                 | 1. Send GET to /api/export/reports <br> 2. Observe response | 200 OK with file download link |               |        |
+| DEI-API-FN-004    | Choose export file format                       | Admin authenticated                 | 1. Specify format (CSV/XLSX) in request <br> 2. Observe response | 200 OK with correct file format |               |        |
+| DEI-API-FN-005    | Import users in bulk                            | Admin authenticated                 | 1. Send POST to /api/import/users with valid CSV <br> 2. Observe response | 200 OK with import success message |               |        |
+| DEI-API-FN-006    | Import projects/tasks data                      | Admin authenticated                 | 1. Send POST to /api/import/projects with valid CSV <br> 2. Observe response | 200 OK with import success message |               |        |
+| DEI-API-FN-007    | Validate imported data                          | Admin authenticated                 | 1. Send POST to /api/import/validate with sample CSV <br> 2. Observe response | 200 OK with validation results |               |        |
+| DEI-API-FN-008    | View import/export history log                  | Admin authenticated                 | 1. Send GET to /api/import-export/logs <br> 2. Observe response | 200 OK with list of past operations |               |        |

@@ -1,0 +1,12 @@
+# Negative Test Cases – Data Export / Import Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| DEI-NT-001  | Import with unsupported file format         | Admin logged in                     | 1. Go to Import page <br> 2. Upload .exe/.txt file <br> 3. Click Import | System blocks import with error message |               |        |
+| DEI-NT-002  | Import with invalid CSV structure           | Admin logged in                     | 1. Upload malformed CSV file <br> 2. Click Import | System shows validation error |               |        |
+| DEI-NT-003  | Import with missing required fields         | Admin logged in                     | 1. Upload CSV missing required columns <br> 2. Click Import | System blocks and shows error message |               |        |
+| DEI-NT-004  | Export without selecting data type          | Admin logged in                     | 1. Click Export without choosing data type | System shows validation error, blocks export |               |        |
+| DEI-NT-005  | Unauthorized user attempts export           | Regular user logged in              | 1. Navigate to Export page <br> 2. Try exporting data | System blocks with 403 Forbidden error |               |        |
+| DEI-NT-006  | Unauthorized user attempts import           | Regular user logged in              | 1. Navigate to Import page <br> 2. Upload CSV <br> 3. Click Import | System blocks with 403 Forbidden error |               |        |
+| DEI-NT-007  | Import with corrupted file content          | Admin logged in                     | 1. Upload partially corrupted CSV <br> 2. Click Import | System blocks with error or partial error message |               |        |
+| DEI-NT-008  | Partial network failure during import       | Admin logged in                     | 1. Start import <br> 2. Disconnect network mid-process <br> 3. Observe behavior | System handles error gracefully, no partial saves |               |        |

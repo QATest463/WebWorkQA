@@ -1,0 +1,12 @@
+# Functional Test Cases – Security and Roles Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| SR-FN-001   | Create new role                             | Admin logged in                     | 1. Navigate to Roles page <br> 2. Click Create Role <br> 3. Enter valid role data <br> 4. Save | New role created successfully |               |        |
+| SR-FN-002   | Edit existing role                         | Admin logged in                     | 1. Select role <br> 2. Modify permissions <br> 3. Save changes | Changes saved and reflected |               |        |
+| SR-FN-003   | Delete role                               | Admin logged in                     | 1. Select role <br> 2. Click Delete <br> 3. Confirm deletion | Role deleted successfully |               |        |
+| SR-FN-004   | Assign role to user                        | Admin logged in                     | 1. Select user <br> 2. Assign role <br> 3. Save | User has new role permissions |               |        |
+| SR-FN-005   | View role hierarchy                       | Admin logged in                     | 1. Navigate to Role Hierarchy section | Hierarchy displayed correctly |               |        |
+| SR-FN-006   | Audit log role changes                    | Admin logged in                     | 1. Change role permissions <br> 2. Check audit log | Change recorded in audit logs |               |        |
+| SR-FN-007   | Enforce role-based access                  | User logged in                      | 1. Attempt restricted action without proper role | Access denied |               |        |
+| SR-FN-008   | Role inheritance                          | Admin logged in                     | 1. Define role inheritance <br> 2. Assign inherited role to user | Permissions inherited correctly |               |        |

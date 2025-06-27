@@ -1,0 +1,9 @@
+# Negative API Test Cases – Access Logs / Audit Trail Module
+
+| ID               | Title                                           | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------------|-------------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| ALAT-API-NT-001   | Unauthorized request to logs endpoint           | User not logged in                  | 1. Send GET to /api/logs without auth <br> 2. Observe response | 401 Unauthorized error returned |               |        |
+| ALAT-API-NT-002   | Unauthorized role attempts to access logs       | Regular user authenticated          | 1. Send GET to /api/logs <br> 2. Observe response | 403 Forbidden error returned |               |        |
+| ALAT-API-NT-003   | Attempt to delete logs via API                   | Admin authenticated                 | 1. Send DELETE request to /api/logs <br> 2. Observe response | 403 Forbidden or 405 Method Not Allowed |               |        |
+| ALAT-API-NT-004   | Malformed request parameters                     | Admin authenticated                 | 1. Send GET with invalid params <br> 2. Observe response | 400 Bad Request with validation error |               |        |
+| ALAT-API-NT-005   | Attempt to edit logs via API                      | Admin authenticated                 | 1. Send PUT request to /api/logs <br> 2. Observe response | 403 Forbidden or 405 Method Not Allowed |               |        |

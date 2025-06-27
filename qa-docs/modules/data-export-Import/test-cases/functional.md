@@ -1,0 +1,12 @@
+# Functional Test Cases – Data Export / Import Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| DEI-FN-001  | Export user activity logs                   | Admin logged in                     | 1. Navigate to Export page <br> 2. Select "Activity Logs" <br> 3. Choose format <br> 4. Click Export | File downloaded with complete activity data |               |        |
+| DEI-FN-002  | Export timesheets                           | Admin logged in                     | 1. Go to Export page <br> 2. Select "Timesheets" <br> 3. Choose format <br> 4. Click Export | Timesheet file downloaded correctly |               |        |
+| DEI-FN-003  | Export reports                              | Admin logged in                     | 1. Go to Export page <br> 2. Select "Reports" <br> 3. Choose format <br> 4. Click Export | Report file downloaded successfully |               |        |
+| DEI-FN-004  | Choose export file format                   | Admin logged in                     | 1. Open Export modal <br> 2. Choose CSV/XLSX <br> 3. Click Export | File downloaded in selected format |               |        |
+| DEI-FN-005  | Import users in bulk                        | Admin logged in                     | 1. Navigate to Import page <br> 2. Upload valid user CSV <br> 3. Click Import | Users created in system successfully |               |        |
+| DEI-FN-006  | Import projects/tasks data                  | Admin logged in                     | 1. Navigate to Import page <br> 2. Upload valid project/task CSV <br> 3. Click Import | Projects/tasks added to system |               |        |
+| DEI-FN-007  | Validate imported data                      | Admin logged in                     | 1. Upload valid CSV with valid data <br> 2. Click Validate | System confirms data is valid |               |        |
+| DEI-FN-008  | View import/export history log              | Admin logged in                     | 1. Navigate to History/Logs page <br> 2. View list of actions | All past imports/exports listed with details |               |        |
