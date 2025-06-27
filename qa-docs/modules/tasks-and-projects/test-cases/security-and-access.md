@@ -1,0 +1,13 @@
+# Security and Access Test Cases – Tasks and Projects Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| TP-SA-001   | Unauthorized access blocked for projects    | User not logged in                  | 1. Attempt to access /projects page without authentication | User is redirected to login or access denied |               |        |
+| TP-SA-002   | Unauthorized access blocked for tasks       | User not logged in                  | 1. Attempt to access /tasks page without authentication | User is redirected to login or access denied |               |        |
+| TP-SA-003   | Role-based permissions enforced for creating | User with limited role              | 1. Log in as limited user <br> 2. Attempt to create project/task | Access denied or button hidden/disabled |               |        |
+| TP-SA-004   | Role-based permissions enforced for editing  | User with limited role              | 1. Log in as limited user <br> 2. Attempt to edit project/task | Edit option hidden or error shown |               |        |
+| TP-SA-005   | Role-based permissions enforced for deleting | User with limited role              | 1. Log in as limited user <br> 2. Attempt to delete project/task | Delete button hidden or error shown |               |        |
+| TP-SA-006   | API rejects unauthorized create requests    | User not logged in                  | 1. Send POST request to /api/projects or /api/tasks without token | 401 Unauthorized error returned |               |        |
+| TP-SA-007   | API rejects unauthorized delete requests    | User not logged in                  | 1. Send DELETE request to /api/projects/{id} without token | 401 Unauthorized error returned |               |        |
+| TP-SA-008   | Validation against tampered IDs in requests | User logged in                      | 1. Modify request to include invalid or unauthorized project/task ID <br> 2. Send request | Server returns 403 Forbidden or validation error |               |        |
+| TP-SA-009   | Enforce HTTPS-only connections              | None                                | 1. Attempt to access application over HTTP <br> 2. Observe behavior | Server redirects to HTTPS or blocks insecure request |               |        |

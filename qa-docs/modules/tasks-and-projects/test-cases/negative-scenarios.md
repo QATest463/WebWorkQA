@@ -1,0 +1,14 @@
+# Negative Test Cases – Tasks and Projects Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| TP-NT-001   | Create project with missing required fields | User with permissions logged in     | 1. Click "Create Project" <br> 2. Leave required fields empty <br> 3. Click Save | System shows validation errors, project not created |               |        |
+| TP-NT-002   | Edit project with invalid data              | Existing project available          | 1. Click Edit on project <br> 2. Enter invalid data (e.g. too long name) <br> 3. Save | Validation error shown, changes not saved |               |        |
+| TP-NT-003   | Delete project without confirmation         | Existing project available          | 1. Click Delete on project <br> 2. Dismiss or cancel confirmation dialog | Project remains in list, no deletion |               |        |
+| TP-NT-004   | Create task with missing required fields    | User with permissions logged in     | 1. Click "Create Task" <br> 2. Leave required fields empty <br> 3. Save | Validation error shown, task not created |               |        |
+| TP-NT-005   | Assign task to non-existent user            | Existing task available             | 1. Edit task <br> 2. Enter invalid user ID in request <br> 3. Save | Server returns error, assignment fails |               |        |
+| TP-NT-006   | Set invalid deadline date                   | Existing task available             | 1. Edit task <br> 2. Enter past or invalid date <br> 3. Save | Validation error shown, changes not saved |               |        |
+| TP-NT-007   | Delete task without confirmation            | Existing task available             | 1. Click Delete <br> 2. Dismiss or cancel confirmation dialog | Task remains in list, no deletion |               |        |
+| TP-NT-008   | Unauthorized user attempts to create project | User without permissions logged in | 1. Log in with limited role <br> 2. Attempt to access "Create Project" | Access denied, button disabled or error shown |               |        |
+| TP-NT-009   | Unauthorized user attempts to delete task   | User without permissions logged in | 1. Log in with limited role <br> 2. Attempt to click Delete on task | Delete button hidden or disabled, action blocked |               |        |
+| TP-NT-010   | API request with tampered task/project ID   | User authenticated                  | 1. Modify request to include invalid or unauthorized ID <br> 2. Send request | Server returns 403 Forbidden or validation error |               |        |

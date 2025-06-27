@@ -1,0 +1,12 @@
+# Negative API Test Cases – Tasks and Projects Module
+
+| ID               | Title                                           | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------------|-------------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| TP-API-NT-001     | Create project with missing required fields     | User authenticated                  | 1. Send POST to /api/projects with empty body <br> 2. Observe response | 400 Bad Request with validation error |               |        |
+| TP-API-NT-002     | Edit project with invalid data                  | Existing project                    | 1. Send PUT/PATCH to /api/projects/{id} with invalid data <br> 2. Observe response | 400 Bad Request with validation error |               |        |
+| TP-API-NT-003     | Delete non-existent project                     | User authenticated                  | 1. Send DELETE to /api/projects/{invalidId} <br> 2. Observe response | 404 Not Found error |               |        |
+| TP-API-NT-004     | Create task with missing required fields        | User authenticated                  | 1. Send POST to /api/tasks with empty body <br> 2. Observe response | 400 Bad Request with validation error |               |        |
+| TP-API-NT-005     | Edit task with invalid data                     | Existing task                       | 1. Send PUT/PATCH to /api/tasks/{id} with invalid data <br> 2. Observe response | 400 Bad Request with validation error |               |        |
+| TP-API-NT-006     | Delete non-existent task                        | User authenticated                  | 1. Send DELETE to /api/tasks/{invalidId} <br> 2. Observe response | 404 Not Found error |               |        |
+| TP-API-NT-007     | Assign task to non-existent user                | Existing task                       | 1. Send PUT/PATCH to /api/tasks/{id}/assign with invalid user ID <br> 2. Observe response | 400 Bad Request or validation error |               |        |
+| TP-API-NT-008     | Bulk delete with mixed valid/invalid IDs        | User with delete permissions        | 1. Send POST to /api/tasks/delete with some invalid IDs <br> 2. Observe response | Server handles gracefully: partial success or validation error |               |        |

@@ -1,0 +1,12 @@
+# Performance Test Cases – Tasks and Projects Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| TP-PF-001   | Projects page load time                     | User logged in                      | 1. Navigate to Projects page <br> 2. Measure load time | Page loads within acceptable threshold (e.g. <2s) |               |        |
+| TP-PF-002   | Tasks page load time                        | User logged in                      | 1. Navigate to Tasks page <br> 2. Measure load time | Page loads within acceptable threshold (e.g. <2s) |               |        |
+| TP-PF-003   | Project list pagination performance         | User with many projects             | 1. Navigate to Projects page <br> 2. Scroll or paginate | Pagination responds quickly without freezing |               |        |
+| TP-PF-004   | Task list pagination performance            | Project with many tasks             | 1. Navigate to Tasks page <br> 2. Scroll or paginate | Pagination responds quickly without freezing |               |        |
+| TP-PF-005   | Create/edit/delete project operation time   | User with permissions               | 1. Create/edit/delete a project <br> 2. Measure response time | Operations complete within acceptable time (e.g. <2s) |               |        |
+| TP-PF-006   | Create/edit/delete task operation time      | User with permissions               | 1. Create/edit/delete a task <br> 2. Measure response time | Operations complete within acceptable time (e.g. <2s) |               |        |
+| TP-PF-007   | Bulk delete tasks performance               | User with permissions               | 1. Select many tasks <br> 2. Perform bulk delete <br> 3. Measure time | Bulk deletion completes without timeout or error |               |        |
+| TP-PF-008   | Rapid repeated operations                   | User with permissions               | 1. Quickly create, edit, delete multiple projects/tasks in succession | System handles rapid requests gracefully without errors |               |        |

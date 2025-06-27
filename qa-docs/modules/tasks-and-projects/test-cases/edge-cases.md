@@ -1,0 +1,12 @@
+# Edge Cases – Tasks and Projects Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| TP-EC-001   | Empty projects list                         | User logged in, no projects created | 1. Navigate to Projects page | System shows clear "No projects available" message without errors |               |        |
+| TP-EC-002   | Empty tasks list in project                 | User logged in, empty project       | 1. Navigate to Tasks page <br> 2. Select project with no tasks | System shows "No tasks available" message without errors |               |        |
+| TP-EC-003   | Very large number of projects               | User with many projects             | 1. Navigate to Projects page <br> 2. Scroll/paginate through list | System loads all pages without crashing or lagging |               |        |
+| TP-EC-004   | Very large number of tasks in project       | Project with many tasks             | 1. Navigate to Tasks page <br> 2. Select project <br> 3. Paginate/scroll | Tasks list loads correctly, pagination works smoothly |               |        |
+| TP-EC-005   | Rapid repeated create/edit/delete actions   | User with permissions logged in     | 1. Quickly create, edit, delete projects and tasks in succession | System handles rapid actions without errors or crashes |               |        |
+| TP-EC-006   | Concurrent edits on the same task           | Two users editing same task         | 1. User A edits task <br> 2. User B edits task simultaneously <br> 3. Both save | System resolves conflict gracefully or shows error |               |        |
+| TP-EC-007   | Bulk deletion of tasks                      | User with permissions               | 1. Select multiple tasks <br> 2. Click Delete <br> 3. Confirm deletion | All selected tasks are deleted without timeout or error |               |        |
+| TP-EC-008   | Filter tasks by multiple users/projects     | User logged in                      | 1. Apply multiple user/project filters <br> 2. Click Apply | Filtered tasks displayed correctly without duplication or omission |               |        |
