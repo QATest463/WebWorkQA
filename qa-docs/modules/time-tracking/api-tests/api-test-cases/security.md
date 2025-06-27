@@ -1,0 +1,11 @@
+# Security API Test Cases – Time Tracking Module
+
+| ID               | Title                                           | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------------|-------------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| TT-API-SC-001     | Unauthorized access returns 401                 | None                                | 1. Send request to /api/timetracking without auth token <br> 2. Observe response | 401 Unauthorized error returned |               |        |
+| TT-API-SC-002     | Only authenticated users can start timer       | User not logged in                  | 1. Attempt POST to /api/timetracking/start <br> 2. Observe response | 401 Unauthorized error returned |               |        |
+| TT-API-SC-003     | Role-based access enforced for manual entries  | User with limited role              | 1. Log in as restricted user <br> 2. Send POST to /api/timetracking/manual | 403 Forbidden or access denied |               |        |
+| TT-API-SC-004     | User can only edit/delete own manual entries   | User authenticated                  | 1. Send PUT/DELETE to another user's entry ID <br> 2. Observe response | 403 Forbidden or validation error returned |               |        |
+| TT-API-SC-005     | Validation against tampered time entry IDs     | User authenticated                  | 1. Modify request with invalid or unauthorized ID <br> 2. Send request | 403 Forbidden or validation error returned |               |        |
+| TT-API-SC-006     | Secure export/download links require authentication | User not logged in               | 1. Attempt to access export/download endpoint without auth <br> 2. Observe response | 401 Unauthorized error returned |               |        |
+| TT-API-SC-007     | Enforce HTTPS-only connections                  | None                                | 1. Attempt to access API over HTTP <br> 2. Observe behavior | Server redirects to HTTPS or blocks insecure request |               |        |

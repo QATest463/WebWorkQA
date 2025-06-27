@@ -1,0 +1,11 @@
+# Negative Test Cases – User Profile Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| UP-NT-001   | Submit empty required fields                | User logged in                      | 1. Open Edit Profile <br> 2. Clear required fields <br> 3. Click Save | System shows validation errors, no save |               |        |
+| UP-NT-002   | Enter invalid email format                  | User logged in                      | 1. Open Edit Profile <br> 2. Enter invalid email <br> 3. Click Save | System blocks save with error message |               |        |
+| UP-NT-003   | Upload unsupported image format             | User logged in                      | 1. Click Change Photo <br> 2. Upload unsupported file type | System blocks upload, shows error |               |        |
+| UP-NT-004   | Password change with incorrect current password | User logged in                      | 1. Open Change Password <br> 2. Enter wrong current password <br> 3. Click Save | System blocks change, shows error |               |        |
+| UP-NT-005   | Weak new password                           | User logged in                      | 1. Open Change Password <br> 2. Enter weak password <br> 3. Click Save | System blocks change, shows strength error |               |        |
+| UP-NT-006   | Attempt to edit another user's profile (UI) | User logged in                      | 1. Modify URL or form to use another user's ID <br> 2. Submit changes | System blocks action with 403 Forbidden |               |        |
+| UP-NT-007   | Partial network failure during save         | User logged in                      | 1. Disconnect network during save <br> 2. Observe result | System handles failure gracefully, shows error |               |        |

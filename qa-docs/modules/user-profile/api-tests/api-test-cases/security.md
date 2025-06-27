@@ -1,0 +1,11 @@
+# Security API Test Cases – User Profile Module
+
+| ID               | Title                                           | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------------|-------------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| UP-API-SC-001     | Unauthorized access returns 401                 | None                                | 1. Send GET/PUT to /api/user/profile without auth token <br> 2. Observe response | 401 Unauthorized error returned |               |        |
+| UP-API-SC-002     | Only authenticated users can update profile    | User not logged in                  | 1. Attempt PUT to /api/user/profile without auth <br> 2. Observe response | 401 Unauthorized error returned |               |        |
+| UP-API-SC-003     | Role-based access enforced for Admin editing   | Admin user                           | 1. Admin attempts to edit another user's profile <br> 2. Observe response | Allowed only with admin permissions |               |        |
+| UP-API-SC-004     | Regular user cannot edit other users           | User logged in                       | 1. Attempt to edit another user's profile via API <br> 2. Observe response | 403 Forbidden or validation error |               |        |
+| UP-API-SC-005     | Validation against tampered user IDs           | User authenticated                   | 1. Modify request to use invalid or unauthorized ID <br> 2. Send request | 403 Forbidden or validation error |               |        |
+| UP-API-SC-006     | Secure password update process                 | User authenticated                   | 1. Attempt password change with invalid session/token <br> 2. Observe response | 401 Unauthorized or session expired error |               |        |
+| UP-API-SC-007     | Enforce HTTPS-only connections                 | None                                | 1. Attempt to access API over HTTP <br> 2. Observe behavior | Server redirects to HTTPS or blocks insecure request |               |        |

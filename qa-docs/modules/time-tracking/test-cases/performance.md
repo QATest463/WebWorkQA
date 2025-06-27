@@ -1,0 +1,11 @@
+# Performance Test Cases – Time Tracking Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| TT-PF-001   | Time Tracking page load time                | User logged in                      | 1. Navigate to Time Tracking page <br> 2. Measure load time | Page loads within acceptable threshold (e.g. <2s) |               |        |
+| TT-PF-002   | Timer start/stop response time              | User logged in                      | 1. Click Start/Stop <br> 2. Measure response time | Action completes quickly without delay |               |        |
+| TT-PF-003   | Pause/resume timer response time            | Timer running or paused             | 1. Click Pause/Resume <br> 2. Measure response time | Action completes immediately |               |        |
+| TT-PF-004   | Add/edit/delete manual entry operation time | User with permissions               | 1. Perform add, edit, delete operations <br> 2. Measure response time | Operations complete within acceptable time (e.g. <2s) |               |        |
+| TT-PF-005   | View large number of time entries           | User with many tracked entries      | 1. Navigate to Time Tracking page <br> 2. Scroll/paginate | System loads entries smoothly without lag |               |        |
+| TT-PF-006   | Switch projects/tasks during tracking       | Timer running                        | 1. Rapidly switch between projects/tasks <br> 2. Measure behavior | System updates assignments quickly without errors |               |        |
+| TT-PF-007   | Rapid repeated start/stop actions           | User logged in                      | 1. Quickly start/stop timer multiple times <br> 2. Observe system | System handles rapid actions gracefully without crashing |               |        |

@@ -1,0 +1,14 @@
+# Functional Test Cases – Notification Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| NTF-FN-001  | Receive real-time notification              | User logged in                      | 1. Trigger an event (e.g. task assigned) <br> 2. Observe notification | Notification appears in real-time without page reload |               |        |
+| NTF-FN-002  | View unread notifications                   | User has unread notifications       | 1. Navigate to Notification panel <br> 2. Observe list | Unread notifications clearly displayed |               |        |
+| NTF-FN-003  | View read notifications                     | User has read notifications         | 1. Navigate to Notification panel <br> 2. Observe list | Read notifications displayed with different styling |               |        |
+| NTF-FN-004  | Mark notification as read                   | User logged in with unread notification | 1. Click on unread notification <br> 2. Observe status | Notification marked as read, styling updated |               |        |
+| NTF-FN-005  | Mark notification as unread                 | User with read notification         | 1. Click "Mark as Unread" <br> 2. Observe status | Notification status updated to unread |               |        |
+| NTF-FN-006  | Delete single notification                  | User logged in                      | 1. Click Delete on a notification <br> 2. Confirm deletion | Notification removed from list |               |        |
+| NTF-FN-007  | Bulk delete notifications                   | User logged in with multiple notifications | 1. Select multiple notifications <br> 2. Click Delete <br> 3. Confirm | All selected notifications removed |               |        |
+| NTF-FN-008  | Filter notifications by type                | User logged in with multiple types  | 1. Open filter options <br> 2. Select type <br> 3. Apply filter | Only notifications of selected type displayed |               |        |
+| NTF-FN-009  | Search notifications                        | User logged in                      | 1. Enter search keyword <br> 2. Observe results | Relevant notifications matching keyword displayed |               |        |
+| NTF-FN-010  | Notification settings/preferences           | User logged in                      | 1. Navigate to Notification Settings <br> 2. Change preferences <br> 3. Save | Preferences saved and applied correctly |               |        |

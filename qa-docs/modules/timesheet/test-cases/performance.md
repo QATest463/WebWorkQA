@@ -1,0 +1,12 @@
+# Performance Test Cases – Timesheet Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| TS-PF-001   | Timesheet page load time                    | User logged in                      | 1. Navigate to Timesheet page <br> 2. Measure load time | Page loads within acceptable threshold (e.g. <2s) |               |        |
+| TS-PF-002   | Filtered search response time               | User with many entries              | 1. Apply filters (date, project, user) <br> 2. Measure response time | Filtered results returned within acceptable time (e.g. <2s) |               |        |
+| TS-PF-003   | Pagination performance with large dataset   | User with many time entries         | 1. Scroll or paginate through entries <br> 2. Observe system behavior | Pages change without noticeable delay or freezing |               |        |
+| TS-PF-004   | Add/edit/delete manual entry operation time | User with permissions               | 1. Add, edit, delete manual entry <br> 2. Measure response time | Operations complete within acceptable time (e.g. <2s) |               |        |
+| TS-PF-005   | Approve/reject entry operation time         | Manager logged in                   | 1. Approve or reject entry <br> 2. Measure response time | Action completes without delay or errors |               |        |
+| TS-PF-006   | Bulk approval performance                   | Manager with many entries           | 1. Select many entries <br> 2. Click Approve <br> 3. Measure operation time | Bulk approval completes without timeout or error |               |        |
+| TS-PF-007   | Export large timesheet to CSV/PDF           | User with many entries              | 1. Click Export <br> 2. Select format <br> 3. Measure time | Export completes successfully without timeout or corruption |               |        |
+| TS-PF-008   | Rapid repeated filter and pagination changes | User logged in                      | 1. Rapidly change filters and pages <br> 2. Observe system behavior | System handles requests gracefully without crashing |               |        |

@@ -1,0 +1,11 @@
+# Edge Cases – Time Tracking Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| TT-EC-001   | Starting multiple timers simultaneously     | User logged in                      | 1. Start first timer <br> 2. Attempt to start second timer | System blocks second start, error shown |               |        |
+| TT-EC-002   | Rapidly switching projects/tasks while tracking | Timer running                        | 1. Switch project/task multiple times quickly | System correctly updates assignment without errors |               |        |
+| TT-EC-003   | Overlapping manual and automatic entries    | Existing tracked time and manual entry | 1. Add manual entry overlapping with automatic tracked time | System blocks or warns about overlap |               |        |
+| TT-EC-004   | Network disconnect while timer running      | Timer started                        | 1. Disconnect network <br> 2. Wait <br> 3. Reconnect | Timer resumes or syncs correctly without losing time |               |        |
+| TT-EC-005   | Long-running timer session                  | Timer started                        | 1. Let timer run for extended period (e.g. 24 hours) | System tracks time without crashing or overflow |               |        |
+| TT-EC-006   | Bulk deletion of manual entries             | User with many manual entries        | 1. Select multiple manual entries <br> 2. Click Delete <br> 3. Confirm | All selected entries deleted without timeout |               |        |
+| TT-EC-007   | Viewing large number of time entries        | User with many time entries          | 1. Navigate to Time Tracking page <br> 2. Scroll/paginate through entries | System loads entries without performance degradation |               |        |

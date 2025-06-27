@@ -1,0 +1,11 @@
+# Security and Access Test Cases – User Profile Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| UP-SA-001   | Unauthorized access blocked                 | User not logged in                  | 1. Attempt to access /profile page without authentication | User is redirected to login or access denied |               |        |
+| UP-SA-002   | Only authenticated users can edit profile   | User not logged in                  | 1. Attempt to send profile update request without auth | 401 Unauthorized error returned |               |        |
+| UP-SA-003   | Role-based access enforced for Admin editing | User logged in as Admin             | 1. Navigate to another user's profile <br> 2. Edit info | Action allowed only for Admin with appropriate permissions |               |        |
+| UP-SA-004   | Regular user cannot edit other users        | User logged in as regular user      | 1. Attempt to edit another user's profile via URL manipulation | System blocks action with 403 Forbidden |               |        |
+| UP-SA-005   | Validation against tampered user IDs        | User logged in                      | 1. Modify request to use invalid or unauthorized ID <br> 2. Send request | 403 Forbidden or validation error returned |               |        |
+| UP-SA-006   | Secure password update process              | User logged in                      | 1. Attempt password change with invalid token/session | 401 Unauthorized or session expired error returned |               |        |
+| UP-SA-007   | Enforce HTTPS-only connections              | None                                | 1. Attempt to access application over HTTP <br> 2. Observe behavior | Server redirects to HTTPS or blocks insecure request |               |        |

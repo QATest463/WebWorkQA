@@ -1,0 +1,11 @@
+# Edge Cases – Timesheet Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| TS-EC-001   | Empty timesheet period                      | User logged in                      | 1. Set date range with no entries <br> 2. Click Apply | System shows clear "No entries available" message without errors |               |        |
+| TS-EC-002   | Very large number of time entries           | User with many tracked entries      | 1. Navigate to Timesheet page <br> 2. Scroll or paginate through entries | System loads all entries without crashes or lags |               |        |
+| TS-EC-003   | Overlapping manual time entries             | User logged in                      | 1. Add two entries with overlapping times <br> 2. Save | System blocks save or shows validation error for overlaps |               |        |
+| TS-EC-004   | Concurrent edits on same entry              | Two users editing same entry        | 1. User A edits entry <br> 2. User B edits entry simultaneously <br> 3. Both save | System handles conflict gracefully or shows error |               |        |
+| TS-EC-005   | Bulk approval of entries                    | Manager logged in with many entries | 1. Select multiple entries <br> 2. Click Approve | All selected entries approved without timeout or errors |               |        |
+| TS-EC-006   | Rapid repeated filter changes               | User logged in                      | 1. Quickly change filters repeatedly <br> 2. Click Apply | System processes requests without crashing or freezing |               |        |
+| TS-EC-007   | Export large timesheet to CSV/PDF           | User with many entries              | 1. Click Export <br> 2. Choose format | Export completes successfully without timeout or corruption |               |        |

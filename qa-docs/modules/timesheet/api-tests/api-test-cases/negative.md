@@ -1,0 +1,12 @@
+# Negative API Test Cases – Timesheet Module
+
+| ID               | Title                                           | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------------|-------------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| TS-API-NT-001     | Add manual time entry with missing fields      | User authenticated                  | 1. Send POST to /api/timesheet with empty body <br> 2. Observe response | 400 Bad Request with validation error |               |        |
+| TS-API-NT-002     | Edit entry with invalid data                   | Existing entry                      | 1. Send PUT/PATCH to /api/timesheet/{id} with invalid data <br> 2. Observe response | 400 Bad Request with validation error |               |        |
+| TS-API-NT-003     | Delete non-existent time entry                 | User authenticated                  | 1. Send DELETE to /api/timesheet/{invalidId} <br> 2. Observe response | 404 Not Found error |               |        |
+| TS-API-NT-004     | Approve non-existent time entry                | Manager authenticated               | 1. Send POST to /api/timesheet/{invalidId}/approve <br> 2. Observe response | 404 Not Found error |               |        |
+| TS-API-NT-005     | Reject non-existent time entry                 | Manager authenticated               | 1. Send POST to /api/timesheet/{invalidId}/reject <br> 2. Observe response | 404 Not Found error |               |        |
+| TS-API-NT-006     | Approve entry without permissions              | User without manager role           | 1. Send POST to /api/timesheet/{id}/approve <br> 2. Observe response | 403 Forbidden error |               |        |
+| TS-API-NT-007     | Reject entry without permissions               | User without manager role           | 1. Send POST to /api/timesheet/{id}/reject <br> 2. Observe response | 403 Forbidden error |               |        |
+| TS-API-NT-008     | Bulk approval with mixed valid/invalid IDs     | Manager authenticated               | 1. Send POST with mixed IDs to /api/timesheet/approve <br> 2. Observe response | Server handles gracefully: partial success or validation error |               |        |

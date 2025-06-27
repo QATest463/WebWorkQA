@@ -1,0 +1,13 @@
+# UI/UX Test Cases – Timesheet Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| TS-UX-001   | Clear and readable timesheet table          | User logged in                      | 1. Navigate to Timesheet page <br> 2. Observe table layout | Entries displayed in clear, aligned grid with readable labels |               |        |
+| TS-UX-002   | Responsive design on mobile devices         | User on mobile device               | 1. Open Timesheet page on mobile <br> 2. Interact with filters and entries | Layout adapts without horizontal scrolling, controls usable |               |        |
+| TS-UX-003   | Filter controls easy to use and accessible  | User logged in                      | 1. Use filter panel <br> 2. Apply and clear filters | Filters are easy to open, set, clear, and respond intuitively |               |        |
+| TS-UX-004   | Forms for adding/editing entries intuitive  | User with permissions               | 1. Click "Add Time" or "Edit" <br> 2. Observe form layout | Fields labeled clearly, easy to fill and validate |               |        |
+| TS-UX-005   | Confirmation dialogs for deletion           | User with permissions               | 1. Click Delete on entry <br> 2. Observe confirmation modal | Clear dialog asking for confirmation before deletion |               |        |
+| TS-UX-006   | Loading indicators during operations        | User logged in                      | 1. Add/edit/delete/approve entry <br> 2. Observe UI feedback | System shows loading spinners or progress messages |               |        |
+| TS-UX-007   | Error messages for validation failures      | User enters invalid data            | 1. Submit form with invalid/missing data <br> 2. Observe messages | Clear, actionable error messages near relevant fields |               |        |
+| TS-UX-008   | Accessibility for keyboard navigation       | User using keyboard only            | 1. Navigate through Timesheet page with Tab key <br> 2. Observe focus behavior | All interactive elements accessible via keyboard |               |        |
+| TS-UX-009   | Consistent styling across browsers          | User on different browsers          | 1. Open Timesheet page in Chrome, Firefox, Safari, Edge <br> 2. Compare UI | Styling and layout consistent across browsers |               |        |

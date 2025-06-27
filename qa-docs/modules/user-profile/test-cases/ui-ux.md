@@ -1,0 +1,13 @@
+# UI/UX Test Cases – User Profile Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| UP-UX-001   | Responsive design on mobile devices         | User on mobile device               | 1. Open Profile page on mobile <br> 2. Interact with forms | Layout adapts without horizontal scrolling, controls usable |               |        |
+| UP-UX-002   | Clear and intuitive forms                   | User logged in                      | 1. Open Edit Profile <br> 2. Observe form layout | Fields clearly labeled, easy to fill and understand |               |        |
+| UP-UX-003   | Validation feedback for errors              | User enters invalid data            | 1. Submit invalid data <br> 2. Observe feedback | Clear, actionable validation messages displayed |               |        |
+| UP-UX-004   | Easy-to-use buttons for save/cancel         | User logged in                      | 1. Open Edit Profile <br> 2. Observe buttons | Buttons clearly labeled and accessible |               |        |
+| UP-UX-005   | Loading indicators during save              | User logged in                      | 1. Make profile changes <br> 2. Click Save | System shows loading spinner or message until complete |               |        |
+| UP-UX-006   | Accessibility for keyboard navigation       | User using keyboard only            | 1. Navigate Profile page with Tab key <br> 2. Observe focus behavior | All interactive elements accessible via keyboard |               |        |
+| UP-UX-007   | Consistent styling across browsers          | User on different browsers          | 1. Open Profile page in Chrome, Firefox, Safari, Edge <br> 2. Compare UI | Styling and layout consistent across browsers |               |        |
+| UP-UX-008   | Profile picture upload UI intuitive         | User logged in                      | 1. Click Change Photo <br> 2. Observe upload flow | Upload process clear, with preview and confirmation |               |        |
+| UP-UX-009   | Activity log easy to navigate               | User with activity history          | 1. Open Activity Log <br> 2. Scroll through entries | Entries clearly listed, easy to read and paginate |               |        |

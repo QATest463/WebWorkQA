@@ -1,0 +1,15 @@
+# Functional Test Cases – Timesheet Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| TS-FN-001   | View personal timesheet                     | User logged in                      | 1. Navigate to Timesheet page <br> 2. Observe personal entries | Timesheet displays user's time entries for selected period |               |        |
+| TS-FN-002   | View team timesheets (Manager)               | Manager logged in                   | 1. Navigate to Timesheet page <br> 2. Select team member <br> 3. View entries | Manager can view selected user's timesheet entries |               |        |
+| TS-FN-003   | Filter timesheet by date range               | User logged in                      | 1. Set start and end dates <br> 2. Click Apply | Timesheet updates to show entries in selected range |               |        |
+| TS-FN-004   | Filter timesheet by project                  | User logged in                      | 1. Select project filter <br> 2. Click Apply | Only entries for selected project displayed |               |        |
+| TS-FN-005   | Add manual time entry                        | User logged in with permissions     | 1. Click "Add Time" <br> 2. Enter valid details <br> 3. Save | New manual time entry added to timesheet |               |        |
+| TS-FN-006   | Edit existing manual time entry              | User logged in with permissions     | 1. Click Edit on manual entry <br> 2. Update details <br> 3. Save | Changes saved and reflected in timesheet |               |        |
+| TS-FN-007   | Delete manual time entry                     | User logged in with permissions     | 1. Click Delete on manual entry <br> 2. Confirm deletion | Entry removed from timesheet |               |        |
+| TS-FN-008   | Approve timesheet entry (Manager)            | Manager logged in                   | 1. Navigate to team member's timesheet <br> 2. Click Approve | Entry status updated to Approved |               |        |
+| TS-FN-009   | Reject timesheet entry (Manager)             | Manager logged in                   | 1. Navigate to team member's timesheet <br> 2. Click Reject | Entry status updated to Rejected |               |        |
+| TS-FN-010   | Export timesheet to CSV                      | User logged in                      | 1. Click Export <br> 2. Select CSV format | CSV file downloaded with timesheet data |               |        |
+| TS-FN-011   | Export timesheet to PDF                      | User logged in                      | 1. Click Export <br> 2. Select PDF format | PDF file downloaded with timesheet data |               |        |

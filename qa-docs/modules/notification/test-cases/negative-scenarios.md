@@ -1,0 +1,11 @@
+# Negative Test Cases – Notification Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| NTF-NT-001  | Delete notification without confirmation    | User logged in with notifications   | 1. Click Delete <br> 2. Cancel confirmation dialog | Notification remains, no deletion occurs |               |        |
+| NTF-NT-002  | Mark non-existent notification as read      | User logged in                      | 1. Send request with invalid notification ID | System returns 404 Not Found or error message |               |        |
+| NTF-NT-003  | View notifications without being logged in  | User not logged in                  | 1. Navigate to Notification page | User redirected to login or access denied |               |        |
+| NTF-NT-004  | Access another user's notifications         | User logged in                      | 1. Modify request to use another user's ID <br> 2. Send request | System blocks access with 403 Forbidden or error |               |        |
+| NTF-NT-005  | Add notification with missing fields (API)  | Admin or System sending request     | 1. Send POST to /api/notifications with missing required fields | 400 Bad Request with validation error |               |        |
+| NTF-NT-006  | Apply invalid filter criteria               | User logged in                      | 1. Enter invalid filter value <br> 2. Click Apply | System handles gracefully, shows error or no results |               |        |
+| NTF-NT-007  | Search with special characters or SQL injection | User logged in                      | 1. Enter malicious string in search <br> 2. Observe results | System sanitizes input, no crash or injection |               |        |

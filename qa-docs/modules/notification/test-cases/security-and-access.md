@@ -1,0 +1,11 @@
+# Security and Access Test Cases – Notification Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| NTF-SA-001  | Unauthorized access blocked                 | User not logged in                  | 1. Attempt to access /notifications page without authentication | User is redirected to login or shown access denied |               |        |
+| NTF-SA-002  | Only authenticated users receive notifications | User not logged in                  | 1. Trigger event <br> 2. Observe system behavior | No notification delivered to unauthenticated users |               |        |
+| NTF-SA-003  | Role-based access for certain notifications | User with limited role              | 1. Log in as restricted user <br> 2. Attempt to receive admin-only notification | Notification not delivered or hidden |               |        |
+| NTF-SA-004  | User can only read own notifications        | User logged in                      | 1. Modify request to use another user's notification ID <br> 2. Send request | System blocks access with 403 Forbidden or error |               |        |
+| NTF-SA-005  | API rejects unauthorized create/delete      | User not logged in                  | 1. Send POST/DELETE to /api/notifications without token <br> 2. Observe response | 401 Unauthorized error returned |               |        |
+| NTF-SA-006  | Validation against tampered notification IDs | User authenticated                  | 1. Modify request with invalid or unauthorized ID <br> 2. Send request | 403 Forbidden or validation error returned |               |        |
+| NTF-SA-007  | Enforce HTTPS-only connections              | None                                | 1. Attempt to access application over HTTP <br> 2. Observe behavior | Server redirects to HTTPS or blocks insecure request |               |        |

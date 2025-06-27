@@ -1,0 +1,12 @@
+# Negative Test Cases – Timesheet Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| TS-NT-001   | Add manual time entry with missing fields   | User logged in                      | 1. Click "Add Time" <br> 2. Leave required fields empty <br> 3. Click Save | System shows validation errors, entry not saved |               |        |
+| TS-NT-002   | Edit manual entry with invalid data         | Existing manual entry               | 1. Click Edit <br> 2. Enter invalid data (e.g. negative hours) <br> 3. Save | System blocks save, shows validation error |               |        |
+| TS-NT-003   | Delete manual entry without confirmation    | Existing manual entry               | 1. Click Delete <br> 2. Dismiss confirmation dialog | Entry remains, no deletion |               |        |
+| TS-NT-004   | Filter with invalid date format              | User logged in                      | 1. Enter invalid date format in filter <br> 2. Click Apply | System shows validation error, filter not applied |               |        |
+| TS-NT-005   | Attempt to approve timesheet as non-manager | Regular user logged in              | 1. Navigate to Timesheet page <br> 2. Try to click Approve on entry | Approve button hidden or disabled, action blocked |               |        |
+| TS-NT-006   | Attempt to edit someone else's time entry   | User logged in                      | 1. Navigate to another user's timesheet <br> 2. Click Edit | Edit option hidden or blocked, error shown |               |        |
+| TS-NT-007   | Unauthorized access to Timesheet page       | User not logged in                  | 1. Navigate to /timesheet URL | User is redirected to login or shown access denied |               |        |
+| TS-NT-008   | API request with invalid time entry ID      | User authenticated                  | 1. Send PUT/DELETE to /api/timesheet/{invalidId} | 404 Not Found or validation error |               |        |

@@ -1,0 +1,11 @@
+# Negative API Test Cases – Notification Module
+
+| ID               | Title                                           | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------------|-------------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| NTF-API-NT-001    | Add notification with missing fields (system/admin) | Admin or system user sending request | 1. Send POST to /api/notifications with missing required fields <br> 2. Observe response | 400 Bad Request with validation error |               |        |
+| NTF-API-NT-002    | Delete non-existent notification                | User authenticated                  | 1. Send DELETE to /api/notifications/{invalidId} <br> 2. Observe response | 404 Not Found error |               |        |
+| NTF-API-NT-003    | Mark another user's notification as read        | User authenticated                  | 1. Send PATCH to /api/notifications/{otherUserId}/read <br> 2. Observe response | 403 Forbidden or validation error |               |        |
+| NTF-API-NT-004    | Bulk delete with mix of valid and invalid IDs   | User authenticated                  | 1. Send DELETE with some invalid IDs <br> 2. Observe response | Server handles gracefully with error message or partial success |               |        |
+| NTF-API-NT-005    | Invalid request body for mark read/unread       | User authenticated                  | 1. Send PATCH with malformed body <br> 2. Observe response | 400 Bad Request with validation error |               |        |
+| NTF-API-NT-006    | Unauthorized access to delete endpoint          | User not logged in                  | 1. Send DELETE to /api/notifications/{id} without token <br> 2. Observe response | 401 Unauthorized error returned |               |        |
+| NTF-API-NT-007    | Attempt to filter with invalid criteria         | User authenticated                  | 1. Send GET with invalid filter parameters <br> 2. Observe response | 400 Bad Request or graceful error handling |               |        |

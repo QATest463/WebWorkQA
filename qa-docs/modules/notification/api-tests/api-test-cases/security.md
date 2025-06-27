@@ -1,0 +1,10 @@
+# Security API Test Cases – Notification Module
+
+| ID               | Title                                           | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------------|-------------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| NTF-API-SC-001    | Unauthorized access returns 401                 | None                                | 1. Send request to /api/notifications without auth token <br> 2. Observe response | 401 Unauthorized error returned |               |        |
+| NTF-API-SC-002    | Only authenticated users can retrieve notifications | User not logged in               | 1. Send GET to /api/notifications <br> 2. Observe response | 401 Unauthorized error returned |               |        |
+| NTF-API-SC-003    | Role-based access enforced for certain notifications | User with limited role           | 1. Log in as restricted user <br> 2. Send GET for admin-only notifications | 403 Forbidden or access denied |               |        |
+| NTF-API-SC-004    | User can only delete own notifications         | User authenticated                  | 1. Send DELETE request with another user's notification ID <br> 2. Observe response | 403 Forbidden or validation error |               |        |
+| NTF-API-SC-005    | Validation against tampered notification IDs   | User authenticated                  | 1. Modify request to use invalid or unauthorized ID <br> 2. Send request | 403 Forbidden or validation error returned |               |        |
+| NTF-API-SC-006    | Enforce HTTPS-only connections                  | None                                | 1. Attempt to access API over HTTP <br> 2. Observe behavior | Server redirects to HTTPS or blocks insecure request |               |        |

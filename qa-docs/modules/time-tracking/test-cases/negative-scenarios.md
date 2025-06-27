@@ -1,0 +1,12 @@
+# Negative Test Cases – Time Tracking Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| TT-NT-001   | Start timer without selecting project/task  | User logged in                      | 1. Click Start without selecting project/task | System blocks start and shows validation error |               |        |
+| TT-NT-002   | Add manual time entry with missing fields   | User logged in                      | 1. Click "Add Time" <br> 2. Leave required fields empty <br> 3. Click Save | System shows validation errors, entry not saved |               |        |
+| TT-NT-003   | Edit manual entry with invalid data         | Existing manual entry               | 1. Click Edit <br> 2. Enter negative hours <br> 3. Save | System blocks save, shows validation error |               |        |
+| TT-NT-004   | Delete manual entry without confirmation    | Existing manual entry               | 1. Click Delete <br> 2. Cancel confirmation dialog | Entry remains, no deletion |               |        |
+| TT-NT-005   | Attempt to start multiple timers simultaneously | User logged in                      | 1. Start timer <br> 2. Attempt to start another timer | System blocks second start, shows error |               |        |
+| TT-NT-006   | Overlapping manual and automatic entries    | User logged in                      | 1. Add manual entry overlapping with tracked time <br> 2. Save | System blocks save or shows warning |               |        |
+| TT-NT-007   | Unauthorized user tries to add/edit/delete entry | User not logged in                 | 1. Attempt to access Time Tracking page or API <br> 2. Observe result | User redirected to login or access denied |               |        |
+| TT-NT-008   | API request with invalid time entry ID      | User authenticated                  | 1. Send PUT/DELETE to /api/timetracking/{invalidId} | 404 Not Found or validation error |               |        |
