@@ -1,0 +1,10 @@
+# UI/UX Test Cases – Authentication
+
+| ID          | Title                                      | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|--------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| AU-UX-001   | Password visibility toggle                 | User is on registration or login page | 1. Open registration/login page <br> 2. Enter password <br> 3. Click on visibility toggle icon | Password becomes visible/hidden as toggled |               |        |
+| AU-UX-002   | Clear and specific error messages          | User attempts invalid login         | 1. Open login page <br> 2. Enter invalid email/password <br> 3. Click Login | Error message clearly states invalid credentials without revealing security details |               |        |
+| AU-UX-003   | Responsive design on mobile devices        | User on mobile device               | 1. Open registration/login page on mobile <br> 2. Check layout and inputs <br> 3. Interact with form fields | Layout is responsive, inputs are usable without horizontal scrolling |               |        |
+| AU-UX-004   | Input validation highlights incorrect fields | User on registration page           | 1. Leave required fields blank <br> 2. Click Register | System highlights empty/invalid fields with clear indicators |               |        |
+| AU-UX-005   | Forgot Password link visibility            | User on login page                  | 1. Open login page <br> 2. Locate "Forgot Password" link | Link is clearly visible and accessible on all screen sizes |               |        |
+| AU-UX-006   | Consistent styling across browsers         | User on different browsers          | 1. Open registration/login pages on multiple browsers (Chrome, Firefox, Safari, Edge) <br> 2. Compare layout and styling | Styling and layout are consistent across supported browsers |               |        |
