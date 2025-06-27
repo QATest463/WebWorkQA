@@ -1,0 +1,9 @@
+# Performance Test Cases – Billing and Payments
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| BP-PF-001   | Payment processing response time            | User has valid payment method       | 1. Initiate payment <br> 2. Measure API response time | Payment request completes within acceptable threshold (e.g. <1 second) |               |        |
+| BP-PF-002   | High concurrency during checkout            | None                                | 1. Simulate multiple concurrent checkout requests (e.g. 100+) <br> 2. Observe system behavior | System handles high load without errors or crashes |               |        |
+| BP-PF-003   | Billing history page load time              | User with large billing history     | 1. Navigate to Billing History page <br> 2. Measure load time | Page loads within acceptable performance threshold (e.g. <2 seconds) |               |        |
+| BP-PF-004   | Payment gateway latency handling            | Payment gateway introduces delay    | 1. Simulate delayed response from gateway <br> 2. Observe system behavior | System gracefully handles delay, informs user if needed |               |        |
+| BP-PF-005   | Rate limiting effectiveness under attack    | None                                | 1. Simulate high-volume malicious payment attempts <br> 2. Observe system response | Rate limiting blocks attack while allowing normal users |               |        |

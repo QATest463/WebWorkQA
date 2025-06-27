@@ -36,29 +36,29 @@ The goal is to ensure that all access mechanisms are reliable, secure, and user-
 
 ## 📁 Module Folder Structure
 authentication/
-├── test-cases/
-│   ├── functional.md
-│   ├── negative-scenarios.md
-│   ├── edge-cases.md
-│   ├── ui-ux.md
-│   ├── security-and-access.md
-│   └── performance.md
-├── checklists/
-│   └── checklist.md
-├── bug-reports/
-│   ├── open/
-│   ├── fixed/
-│   ├── in-review/
-│   └── closed/
-├── api-tests/
-│   ├── api-checklist.md
-│   ├── api-test-cases/
-│   │   ├── functional.md
-│   │   ├── security.md
-│   │   └── negative.md
-│   └── postman/
-│       └── postman_collection.json
-└── README.md
+- test-cases/
+  - functional.md
+  - negative-scenarios.md
+  - edge-cases.md
+  - ui-ux.md
+  - security-and-access.md
+  - performance.md
+- checklists/
+  - checklist.md
+- bug-reports/
+  - open/
+  - fixed/
+  - in-review/
+  - closed/
+- api-tests/
+  - api-checklist.md
+  - api-test-cases/
+    - functional.md
+    - security.md
+    - negative.md
+  - postman/
+    - postman_collection.json
+- README.md
 
 ## 🧪 Priority
 

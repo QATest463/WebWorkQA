@@ -1,0 +1,11 @@
+# Functional API Test Cases – Reports
+
+| ID             | Title                                              | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-----------------|----------------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| RP-API-FN-001   | Retrieve available report types                    | None                                | 1. Send GET request to /api/reports/types <br> 2. Observe response | 200 OK with list of available report types |               |        |
+| RP-API-FN-002   | Generate time tracking report with valid filters   | User authenticated                  | 1. Send POST to /api/reports/generate with valid time tracking filters <br> 2. Observe response | 200 OK with report data matching filters |               |        |
+| RP-API-FN-003   | Generate billing report with valid filters         | User authenticated                  | 1. Send POST to /api/reports/generate with valid billing filters <br> 2. Observe response | 200 OK with correct billing data |               |        |
+| RP-API-FN-004   | Apply date range filters                           | User authenticated                  | 1. Send POST to /api/reports/generate with date range <br> 2. Observe response | 200 OK with data restricted to date range |               |        |
+| RP-API-FN-005   | Export report to PDF                               | Report already generated            | 1. Send GET to /api/reports/export/pdf?reportId={id} <br> 2. Observe response | 200 OK with PDF file content |               |        |
+| RP-API-FN-006   | Export report to CSV                               | Report already generated            | 1. Send GET to /api/reports/export/csv?reportId={id} <br> 2. Observe response | 200 OK with CSV file content |               |        |
+| RP-API-FN-007   | Schedule automated report                          | User has permissions                | 1. Send POST to /api/reports/schedule with valid details <br> 2. Observe response | 200 OK with confirmation and schedule ID |               |        |

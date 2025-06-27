@@ -1,0 +1,11 @@
+# Security and Access Test Cases – Reports
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| RP-SA-001   | Access control enforced for reports page    | User not logged in                  | 1. Attempt to access /reports page without authentication | System redirects to login or shows access denied |               |        |
+| RP-SA-002   | Role-based access to report types           | User with limited role              | 1. Login with restricted role <br> 2. Navigate to Reports page | User sees only allowed report types |               |        |
+| RP-SA-003   | Authorization required for API endpoints    | User not logged in                  | 1. Send GET request to /api/reports without token | Server returns 401 Unauthorized |               |        |
+| RP-SA-004   | Data visibility limited by user role        | User with limited permissions       | 1. Generate report as limited user <br> 2. Observe data | Report contains only data the user is authorized to see |               |        |
+| RP-SA-005   | Secure export/download links                | User logged in                      | 1. Generate report <br> 2. Click Export link <br> 3. Share link externally | Export links require authentication and cannot be accessed by unauthenticated users |               |        |
+| RP-SA-006   | Protection against tampered API requests    | User logged in                      | 1. Modify API request payload with invalid filter <br> 2. Send request | Server validates and rejects tampered request with error |               |        |
+| RP-SA-007   | Enforce HTTPS-only access                   | None                                | 1. Attempt to access reports over HTTP <br> 2. Observe behavior | Server redirects to HTTPS or blocks insecure connection |               |        |
