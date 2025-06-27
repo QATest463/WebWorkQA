@@ -1,59 +1,38 @@
-# WebWorkQA 📋
+# QA Documentation
 
-**Modular Quality Assurance Documentation for WebWork Platform**
-
-This repository contains structured, professional QA documentation organized by modules and designed to showcase strong QA engineering practices.
-
----
-
-## 📦 Project Structure
-
-- `qa-docs/` – Complete QA documentation
-  - Modular folders with:
-    - **Test Cases**
-    - **Checklists**
-    - **Bug Reports**
-    - **API Tests**
-    - **README.md** describing what's tested
-- `auto-tests/` – (Optional) For Playwright/Python automated tests in future
-- `tools/` – Postman collections, Charles configs, etc.
-- `assets/` – Screenshots, diagrams
-- `reports/` – Testing summaries
+This folder contains **all quality assurance documentation** for the WebWork project.  
+Each module follows a standardized structure for easy navigation and collaboration.
 
 ---
 
-## 🗂️ Module Examples
-✅ Authentication  
-✅ Activity and Productivity  
-✅ Billing and Payments  
-✅ Admin Panel  
-... *(and more planned)*
+## 📦 Folder Structure
 
-Each module includes:
-- Structured **Test Cases** in Markdown tables
-- **Checklists** for QA cycles
-- **Bug Reports** with detailed templates
-- **API Tests** with Postman collections and test cases
-
----
-
-## 🧪 Tools Used
-- [Playwright](https://playwright.dev) for automation (planned)
-- Postman for API testing
-- Markdown for documentation
-- Git/GitHub for version control
+- `modules/` – Feature modules with:
+  - **Test Cases** (detailed tables with IDs and steps)
+  - **Checklists** (pre-release verification)
+  - **Bug Reports** (organized by status)
+  - **API Tests** (Postman collections + test cases)
+- `auto-tests/` – Placeholder for automated test code
+- `bug-reports/` – General bug reports outside modules
+- `screenshots/` – Images for documentation or bugs
+- `tools/` – Postman, Charles, and other QA tools
+- `assets/` – Diagrams, screenshots for docs
+- `reports/` – Summaries of testing
 
 ---
 
-## 🌟 Purpose
-This project demonstrates:
-- Realistic QA documentation practices
-- Modular, scalable structure for teamwork
-- Readiness for real-world projects and collaboration
+## 🗂️ How to Use
+
+✅ Navigate into each module for feature-specific tests  
+✅ Review test-cases/*.md for step-by-step scenarios  
+✅ Check checklists before release cycles  
+✅ Report or review bugs in bug-reports/ folders  
+✅ Run Postman collections in api-tests/postman/
 
 ---
 
-## 🚀 Author
-**Vahe Hunanyan**
-- QA Engineer (Manual + Automation)
-- Open to feedback and collaboration!
+## ✨ Notes
+
+- This structure is modular and designed to scale.
+- Follow the naming conventions for IDs and folders.
+- Keep all documentation clear and up-to-date.
