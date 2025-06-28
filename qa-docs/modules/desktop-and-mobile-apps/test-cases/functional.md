@@ -1,0 +1,14 @@
+# Functional Test Cases – Desktop and Mobile Apps Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| DMA-FN-001  | User login                                  | None                                | 1. Open app <br> 2. Enter valid credentials <br> 3. Tap Login | User logged in successfully |               |        |
+| DMA-FN-002  | User logout                                 | User logged in                      | 1. Tap Logout button <br> 2. Confirm action | User logged out, redirected to login |               |        |
+| DMA-FN-003  | Start time tracking                         | User logged in                      | 1. Tap Start Tracking <br> 2. Observe timer | Timer starts, time recorded |               |        |
+| DMA-FN-004  | Stop time tracking                          | User tracking time                  | 1. Tap Stop Tracking <br> 2. Observe timer | Timer stops, time saved |               |        |
+| DMA-FN-005  | Manual time entry                           | User logged in                      | 1. Open Manual Entry <br> 2. Enter details <br> 3. Save | Manual entry recorded successfully |               |        |
+| DMA-FN-006  | Screenshot capture during tracking          | User tracking time                  | 1. Allow screenshot permission <br> 2. Observe during tracking | Screenshots captured at intervals |               |        |
+| DMA-FN-007  | Activity level capture                      | User tracking time                  | 1. Start tracking <br> 2. Use keyboard/mouse normally | Activity percentage shown |               |        |
+| DMA-FN-008  | Notifications for idle time                 | User logged in                      | 1. Stay idle beyond threshold <br> 2. Observe app behavior | Idle notification displayed |               |        |
+| DMA-FN-009  | Sync tracked time to server                 | User tracking time                  | 1. Track time offline <br> 2. Reconnect internet <br> 3. Sync | Data synced to server |               |        |
+| DMA-FN-010  | Access app settings                         | User logged in                      | 1. Open Settings <br> 2. Modify preferences <br> 3. Save | Settings saved successfully |               |        |

@@ -1,0 +1,9 @@
+# Functional API Test Cases – User Onboarding & Welcome Flow Module
+
+| ID               | Title                                           | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------------|-------------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| UOWF-API-FN-001   | Register new user                               | None                                | 1. Send POST to /api/register with valid data <br> 2. Observe response | 201 Created with user details |               |        |
+| UOWF-API-FN-002   | Email verification endpoint                     | User registered                     | 1. Send GET to /api/verify with valid token <br> 2. Observe response | 200 OK with confirmation |               |        |
+| UOWF-API-FN-003   | Login with verified account                     | User verified                       | 1. Send POST to /api/login with credentials <br> 2. Observe response | 200 OK with auth token |               |        |
+| UOWF-API-FN-004   | Complete profile setup via API                  | User authenticated                  | 1. Send PUT to /api/profile with valid data <br> 2. Observe response | 200 OK with updated profile |               |        |
+| UOWF-API-FN-005   | Invite team members via API                     | User authenticated                  | 1. Send POST to /api/invite with team emails <br> 2. Observe response | 200 OK, invitations sent |               |        |

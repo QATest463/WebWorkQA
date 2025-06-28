@@ -1,0 +1,10 @@
+# UI/UX Test Cases – Mobile Push Notifications Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| MPN-UX-001  | Clear opt-in prompt                          | User with app                        | 1. Install app <br> 2. Launch app for first time | Prompt displayed clearly with options |               |        |
+| MPN-UX-002  | Easy opt-out from settings                   | User with app                        | 1. Open app settings <br> 2. Toggle notification preference | User can easily disable notifications |               |        |
+| MPN-UX-003  | Notification styling on device               | User with app                        | 1. Receive notification <br> 2. Observe appearance | Consistent, clear styling across devices |               |        |
+| MPN-UX-004  | Handling notification taps                   | User with app                        | 1. Tap notification <br> 2. Observe app navigation | App opens correct screen or deep link |               |        |
+| MPN-UX-005  | Accessibility of opt-in/out controls         | User with accessibility needs        | 1. Navigate settings via screen reader/keyboard | Controls labeled and usable with assistive tech |               |        |
+| MPN-UX-006  | Notification content readability             | User with app                        | 1. Receive notification with long text <br> 2. Observe text wrapping | Content readable without truncation |               |        |

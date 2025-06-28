@@ -1,0 +1,9 @@
+# Edge Cases – User Onboarding & Welcome Flow Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| UOWF-EC-001 | Duplicate email registrations simultaneously | None                                | 1. Submit two registrations at same time with same email | Only one succeeds, other blocked with error |               |        |
+| UOWF-EC-002 | Delayed email delivery                       | User registered                     | 1. Wait extended time before clicking verification link | Link still valid within allowed time window |               |        |
+| UOWF-EC-003 | Interrupted registration flow                | None                                | 1. Start registration <br> 2. Close browser mid-way <br> 3. Return later | Data saved or user restarts cleanly |               |        |
+| UOWF-EC-004 | Multiple verification link clicks            | User registered and verified        | 1. Click verification link multiple times | Link works once, shows appropriate message after |               |        |
+| UOWF-EC-005 | Large number of simultaneous new registrations| None                                | 1. Simulate many users registering at once | System handles load without errors |               |        |

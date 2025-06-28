@@ -1,0 +1,9 @@
+# Performance Test Cases – Desktop and Mobile Apps Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| DMA-PF-001  | App launch time                             | None                                | 1. Open app <br> 2. Measure time to load dashboard | Launches within acceptable time (<5s) |               |        |
+| DMA-PF-002  | Time tracking with many entries             | User logged in                      | 1. Create many tracked entries <br> 2. Observe performance | App remains responsive |               |        |
+| DMA-PF-003  | Sync performance with poor network          | User logged in                      | 1. Throttle network <br> 2. Trigger sync | Sync completes without crash or error |               |        |
+| DMA-PF-004  | Low memory performance                      | User logged in                      | 1. Simulate low system memory <br> 2. Use app | App remains stable or gives warning |               |        |
+| DMA-PF-005  | Battery usage during tracking               | User tracking time                  | 1. Start tracking for extended period <br> 2. Monitor battery drain | Battery usage within acceptable range |               |        |

@@ -1,0 +1,9 @@
+# Security and Access Test Cases – Performance Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| PF-SA-001   | Rate limiting on critical APIs               | User logged in                      | 1. Send many rapid API calls <br> 2. Observe response | 429 Too Many Requests or rate limit applied |               |        |
+| PF-SA-002   | Protect against DoS attacks                  | System under test                   | 1. Simulate high volume traffic <br> 2. Observe system | System remains stable or blocks excess requests |               |        |
+| PF-SA-003   | Secure resource allocation                   | User logged in                      | 1. Perform heavy operations <br> 2. Monitor server resources | No unauthorized resource exhaustion |               |        |
+| PF-SA-004   | Authentication required for performance APIs | Not authenticated                   | 1. Attempt to call performance-sensitive APIs <br> 2. Observe response | 401 Unauthorized error |               |        |
+| PF-SA-005   | Prevent privilege escalation during load     | User logged in                      | 1. Attempt privileged action during stress test <br> 2. Observe response | Access denied without proper permissions |               |        |

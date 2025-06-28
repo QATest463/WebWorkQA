@@ -1,0 +1,9 @@
+# Negative API Test Cases – Mobile Push Notifications Module
+
+| ID               | Title                                           | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------------|-------------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| MPN-API-NT-001    | Send notification with missing required fields  | Admin authenticated                 | 1. Send POST to /api/notifications with missing message body <br> 2. Observe response | 400 Bad Request with validation error |               |        |
+| MPN-API-NT-002    | Register device with invalid token              | User logged in                      | 1. Send POST to /api/devices with invalid token <br> 2. Observe response | 400 Bad Request with error message |               |        |
+| MPN-API-NT-003    | Manage preferences with invalid device ID       | User logged in                      | 1. Send PUT to /api/devices/invalid-id/preferences <br> 2. Observe response | 404 Not Found or error returned |               |        |
+| MPN-API-NT-004    | Send notification without authentication        | Not authenticated                   | 1. Attempt POST to /api/notifications <br> 2. Observe response | 401 Unauthorized error |               |        |
+| MPN-API-NT-005    | Malformed JSON in request body                  | Admin authenticated                 | 1. Send POST with malformed JSON <br> 2. Observe response | 400 Bad Request with error message |               |        |

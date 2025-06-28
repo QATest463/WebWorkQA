@@ -1,0 +1,9 @@
+# Edge Cases – Performance Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| PF-EC-001   | Large data set loading                      | User logged in                      | 1. Open report with thousands of entries <br> 2. Measure load time | Loads within acceptable time without error |               |        |
+| PF-EC-002   | Multiple concurrent user sessions           | System under test                   | 1. Simulate many users logging in and using system | System remains responsive |               |        |
+| PF-EC-003   | Sudden spike in traffic                     | System under test                   | 1. Simulate sudden surge in user activity | System scales or handles gracefully |               |        |
+| PF-EC-004   | User session timeout during operation       | User logged in                      | 1. Start long operation <br> 2. Wait for session timeout | User redirected to login or warned |               |        |
+| PF-EC-005   | Slow/unreliable network                     | User logged in                      | 1. Simulate unstable connection <br> 2. Navigate app | App retries or shows proper errors without crashing |               |        |

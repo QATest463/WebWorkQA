@@ -1,0 +1,10 @@
+# Functional Test Cases – Mobile Push Notifications Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| MPN-FN-001  | Send push notification                      | Admin logged in                     | 1. Go to Notifications panel <br> 2. Compose message <br> 3. Send | Notification sent successfully |               |        |
+| MPN-FN-002  | Receive push notification                   | User has app installed and registered | 1. Trigger notification from admin panel <br> 2. Observe device | Notification received on device |               |        |
+| MPN-FN-003  | Notification content and formatting         | User with app                        | 1. Trigger notification with rich content (title, body) <br> 2. Observe device | Content displayed correctly |               |        |
+| MPN-FN-004  | Handle deep links in notification           | User with app                        | 1. Tap on notification with deep link <br> 2. Observe app behavior | App opens to correct screen |               |        |
+| MPN-FN-005  | Manage opt-in/opt-out preferences           | User with app                        | 1. Go to app settings <br> 2. Enable/disable notifications <br> 3. Trigger test notification | Notifications respect user preference |               |        |
+| MPN-FN-006  | Track notification delivery status          | Admin logged in                      | 1. Send notification <br> 2. Check delivery report | Status of sent notifications visible |               |        |

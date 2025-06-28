@@ -1,0 +1,9 @@
+# Functional Test Cases – Performance Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| PF-FN-001   | Measure page load times                     | User logged in                      | 1. Navigate to dashboard <br> 2. Measure load time | Page loads within defined SLA (<2s) |               |        |
+| PF-FN-002   | Verify dashboard responsiveness             | User logged in                      | 1. Click between dashboard tabs <br> 2. Observe response | Immediate switch without lag |               |        |
+| PF-FN-003   | Test report generation speed                | User logged in                      | 1. Generate detailed report <br> 2. Measure generation time | Report generated within acceptable time |               |        |
+| PF-FN-004   | API response time within SLA                | User logged in                      | 1. Call critical APIs <br> 2. Measure response times | API responds within SLA (<500ms) |               |        |
+| PF-FN-005   | System maintains performance under normal load | Multiple users online                | 1. Simulate typical user activity <br> 2. Observe system performance | No slowdowns or errors observed |               |        |

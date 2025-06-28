@@ -1,0 +1,9 @@
+# Negative Test Cases – Desktop and Mobile Apps Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| DMA-NT-001  | Login with invalid credentials              | None                                | 1. Open app <br> 2. Enter invalid credentials <br> 3. Tap Login | Error message displayed, login blocked |               |        |
+| DMA-NT-002  | Manual time entry with invalid data         | User logged in                      | 1. Open Manual Entry <br> 2. Enter invalid time or date <br> 3. Save | Validation error shown |               |        |
+| DMA-NT-003  | Start tracking without permissions          | User logged in                      | 1. Deny screenshot/activity permissions <br> 2. Start tracking | Permission error or graceful fallback |               |        |
+| DMA-NT-004  | Force close during tracking                 | User tracking time                  | 1. Start tracking <br> 2. Force close app <br> 3. Reopen app | App restores state or handles gracefully |               |        |
+| DMA-NT-005  | Attempt to edit other user’s time entry     | User logged in                      | 1. Attempt to modify someone else’s record | Action blocked with error |               |        |

@@ -1,0 +1,9 @@
+# Security API Test Cases – Performance Module
+
+| ID               | Title                                           | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------------|-------------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| PF-API-SC-001     | Rate limiting enforced on critical APIs         | User authenticated                  | 1. Send multiple rapid API calls <br> 2. Observe response | 429 Too Many Requests or rate limit applied |               |        |
+| PF-API-SC-002     | Protect against DoS attacks via API             | None                                | 1. Simulate high volume of malicious requests <br> 2. Observe system | System remains stable or blocks excess requests |               |        |
+| PF-API-SC-003     | Secure resource allocation under API stress     | User authenticated                  | 1. Trigger heavy API operations <br> 2. Monitor resource use | No unauthorized resource exhaustion |               |        |
+| PF-API-SC-004     | Enforce HTTPS-only connections                  | None                                | 1. Attempt HTTP access to API <br> 2. Observe response | Redirected to HTTPS or access blocked |               |        |
+| PF-API-SC-005     | Authentication required for performance APIs   | Not authenticated                   | 1. Attempt to call performance-sensitive APIs <br> 2. Observe response | 401 Unauthorized error |               |        |

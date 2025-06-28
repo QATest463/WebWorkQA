@@ -1,0 +1,9 @@
+# Functional API Test Cases – Performance Module
+
+| ID               | Title                                           | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------------|-------------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| PF-API-FN-001     | Measure API response time under normal load    | User authenticated                  | 1. Send typical API call <br> 2. Measure response time | API responds within SLA (<500ms) |               |        |
+| PF-API-FN-002     | Measure API response time under peak load      | User authenticated                  | 1. Simulate high volume of API calls <br> 2. Measure response time | Response time remains acceptable (<1s) |               |        |
+| PF-API-FN-003     | Handle large payload requests                  | User authenticated                  | 1. Send POST with large but valid payload <br> 2. Observe response | API processes without error or returns validation |               |        |
+| PF-API-FN-004     | Retrieve large data sets                       | User authenticated                  | 1. Call endpoint returning large data <br> 2. Measure response time | API delivers within acceptable limits |               |        |
+| PF-API-FN-005     | Verify stability during normal usage           | User authenticated                  | 1. Run multiple typical calls <br> 2. Observe system | No timeouts or errors occur |               |        |

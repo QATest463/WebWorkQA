@@ -1,0 +1,9 @@
+# Negative API Test Cases – User Onboarding & Welcome Flow Module
+
+| ID               | Title                                           | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------------|-------------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| UOWF-API-NT-001   | Registration with existing email                | None                                | 1. Send POST with email already in use <br> 2. Observe response | 400 Bad Request with error message |               |        |
+| UOWF-API-NT-002   | Registration with invalid email format          | None                                | 1. Send POST with invalid email <br> 2. Observe response | 400 Bad Request with validation error |               |        |
+| UOWF-API-NT-003   | Weak password rejected                          | None                                | 1. Send POST with weak password <br> 2. Observe response | 400 Bad Request with error message |               |        |
+| UOWF-API-NT-004   | Verify with invalid or expired token            | User registered                     | 1. Send GET with invalid/expired token <br> 2. Observe response | 400 or 404 with error message |               |        |
+| UOWF-API-NT-005   | Malformed request body                          | None                                | 1. Send POST with malformed JSON <br> 2. Observe response | 400 Bad Request with error message |               |        |

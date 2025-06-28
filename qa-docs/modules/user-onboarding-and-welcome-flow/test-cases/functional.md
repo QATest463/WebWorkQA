@@ -1,0 +1,11 @@
+# Functional Test Cases – User Onboarding & Welcome Flow Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| UOWF-FN-001 | User registration with valid details         | None                                | 1. Navigate to registration page <br> 2. Enter valid info <br> 3. Submit | User registered and verification email sent |               |        |
+| UOWF-FN-002 | Email verification link works                 | User registered, email received     | 1. Open email <br> 2. Click verification link | Account marked as verified |               |        |
+| UOWF-FN-003 | First login redirects to welcome flow         | User verified                       | 1. Log in with verified account | Welcome/setup flow starts |               |        |
+| UOWF-FN-004 | Complete profile setup wizard                 | User logged in                      | 1. Navigate through setup steps <br> 2. Complete each step | Profile saved and user redirected to dashboard |               |        |
+| UOWF-FN-005 | View and complete welcome tour                | User logged in                      | 1. Start welcome tour <br> 2. Follow steps | Tour highlights features clearly |               |        |
+| UOWF-FN-006 | See success confirmation on completion        | User completed onboarding           | 1. Finish last onboarding step | Success message shown |               |        |
+| UOWF-FN-007 | Invite team members during onboarding         | User logged in                      | 1. Enter emails to invite team <br> 2. Send invitations | Invites sent successfully |               |        |

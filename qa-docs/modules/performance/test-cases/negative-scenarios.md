@@ -1,0 +1,9 @@
+# Negative Test Cases – Performance Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| PF-NT-001   | Report generation with excessive filters    | User logged in                      | 1. Add many filters to report <br> 2. Generate report | System handles gracefully or returns error |               |        |
+| PF-NT-002   | API call with large invalid payload         | User logged in                      | 1. Send oversized/invalid data to API <br> 2. Observe response | 400 Bad Request with validation error |               |        |
+| PF-NT-003   | Simulate slow network conditions            | User logged in                      | 1. Throttle network <br> 2. Navigate dashboard | System handles slow connections gracefully |               |        |
+| PF-NT-004   | Simultaneous multiple heavy operations      | User logged in                      | 1. Trigger multiple reports at once <br> 2. Observe response | System queues or limits tasks to prevent crash |               |        |
+| PF-NT-005   | API endpoint without required parameters    | User logged in                      | 1. Call API without mandatory params <br> 2. Observe response | 400 Bad Request with clear error |               |        |

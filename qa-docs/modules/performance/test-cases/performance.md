@@ -1,0 +1,9 @@
+# Performance Test Cases – Performance Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| PF-PF-001   | System response under normal load            | Multiple users online               | 1. Simulate normal user activity <br> 2. Measure response times | Response times within SLA (<2s) |               |        |
+| PF-PF-002   | System stability under peak load             | System under test                   | 1. Simulate high user traffic <br> 2. Observe performance | System remains stable without crashes |               |        |
+| PF-PF-003   | API response time under load                 | User logged in                      | 1. Send multiple API calls rapidly <br> 2. Measure response times | API responds within SLA (<500ms) |               |        |
+| PF-PF-004   | Long-running report generation               | User logged in                      | 1. Generate complex report <br> 2. Measure generation time | Completes within acceptable time (<10s) |               |        |
+| PF-PF-005   | Resource usage monitoring                    | System under test                   | 1. Run stress test <br> 2. Monitor CPU, memory usage | Resource usage stays within limits |               |        |

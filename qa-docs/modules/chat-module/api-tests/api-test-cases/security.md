@@ -1,0 +1,9 @@
+# Security API Test Cases – Chat Module
+
+| ID               | Title                                           | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------------|-------------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| CH-API-SC-001     | Block unauthorized access                       | Not authenticated                   | 1. Call protected chat endpoint without token <br> 2. Observe response | 401 Unauthorized error |               |        |
+| CH-API-SC-002     | Enforce HTTPS-only connections                  | None                                | 1. Attempt HTTP access to API <br> 2. Observe response | Redirected to HTTPS or access blocked |               |        |
+| CH-API-SC-003     | Input validation to prevent injection/XSS       | User authenticated                  | 1. Send message with HTML/JS code <br> 2. Observe stored message | Content sanitized, no XSS |               |        |
+| CH-API-SC-004     | Secure storage of user tokens                   | User authenticated                  | 1. Inspect local storage or DB <br> 2. Check token storage | Tokens encrypted or inaccessible in plain text |               |        |
+| CH-API-SC-005     | Rate limiting enforced on message sending       | User authenticated                  | 1. Rapidly send messages via API <br> 2. Observe response | 429 Too Many Requests or rate limit applied |               |        |

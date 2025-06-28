@@ -1,0 +1,9 @@
+# Security and Access Test Cases – Desktop and Mobile Apps Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| DMA-SA-001  | User authentication required                 | None                                | 1. Open app <br> 2. Attempt to access dashboard without login | Redirected to login screen |               |        |
+| DMA-SA-002  | Secure storage of user credentials           | User logged in                      | 1. Inspect app storage <br> 2. Check for sensitive data | Password/token securely stored/encrypted |               |        |
+| DMA-SA-003  | Authorization for feature access             | User with limited role              | 1. Attempt admin-only feature <br> 2. Observe response | Access denied with error |               |        |
+| DMA-SA-004  | Prevent unauthorized time editing            | User logged in                      | 1. Attempt to edit another user's entry <br> 2. Observe response | Action blocked with error |               |        |
+| DMA-SA-005  | Enforce HTTPS for API connections            | User logged in                      | 1. Monitor network traffic during API call | All calls made over HTTPS |               |        |

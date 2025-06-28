@@ -1,0 +1,9 @@
+# Functional API Test Cases – Mobile Push Notifications Module
+
+| ID               | Title                                           | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------------|-------------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| MPN-API-FN-001    | Send push notification                         | Admin authenticated                 | 1. Send POST to /api/notifications with valid payload <br> 2. Observe response | 201 Created with notification ID |               |        |
+| MPN-API-FN-002    | Retrieve notification delivery status           | Admin authenticated                 | 1. Send GET to /api/notifications/status/{id} <br> 2. Observe response | 200 OK with delivery details |               |        |
+| MPN-API-FN-003    | Register user device token                      | User logged in                      | 1. Send POST to /api/devices with token <br> 2. Observe response | 201 Created with device details |               |        |
+| MPN-API-FN-004    | Manage opt-in/opt-out preferences                | User logged in                      | 1. Send PUT to /api/devices/{id}/preferences <br> 2. Observe response | 200 OK with updated preferences |               |        |
+| MPN-API-FN-005    | List registered device tokens                    | Admin authenticated                 | 1. Send GET to /api/devices <br> 2. Observe response | 200 OK with device list |               |        |

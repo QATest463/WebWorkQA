@@ -1,0 +1,9 @@
+# Negative Test Cases – API Integration Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| API-NT-001  | Connect with invalid API key                | Admin logged in                     | 1. Enter invalid API key <br> 2. Save settings | Error message shown, connection blocked |               |        |
+| API-NT-002  | Send malformed data to external API         | Admin logged in                     | 1. Create invalid record <br> 2. Trigger API send | 400 Bad Request received, error logged |               |        |
+| API-NT-003  | Receive malformed JSON from external API    | Admin logged in                     | 1. Trigger data sync with bad response <br> 2. Observe system | Graceful error handling, user alerted |               |        |
+| API-NT-004  | Exceed external API rate limits             | Admin logged in                     | 1. Rapidly trigger API calls <br> 2. Observe response | 429 Too Many Requests handled gracefully |               |        |
+| API-NT-005  | API call without authentication header      | None                                | 1. Call internal API without auth header <br> 2. Observe response | 401 Unauthorized error |               |        |

@@ -1,0 +1,9 @@
+# Edge Cases – API Integration Module
+
+| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| API-EC-001  | Handle partial data response                | Admin logged in                     | 1. Trigger sync with partial data from API <br> 2. Observe system | Only valid data processed, errors logged |               |        |
+| API-EC-002  | Handle unexpected fields in API response    | Admin logged in                     | 1. Trigger sync with extra/unexpected fields <br> 2. Observe system | Extra fields ignored without error |               |        |
+| API-EC-003  | Version mismatch between APIs               | Admin logged in                     | 1. Simulate older/newer API version response <br> 2. Observe behavior | System handles gracefully, user alerted if needed |               |        |
+| API-EC-004  | Network loss during sync                    | Admin logged in                     | 1. Start data sync <br> 2. Disconnect network <br> 3. Reconnect | Sync resumes or error message shown |               |        |
+| API-EC-005  | Extremely large payload from external API   | Admin logged in                     | 1. Trigger sync with large data set <br> 2. Observe processing | System processes without crashing |               |        |

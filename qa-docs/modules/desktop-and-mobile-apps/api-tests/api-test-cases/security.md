@@ -1,0 +1,10 @@
+# Functional API Test Cases – Desktop and Mobile Apps Module
+
+| ID               | Title                                           | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-------------------|-------------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| DMA-API-FN-001    | User authentication via API                     | None                                | 1. Send POST to /api/login with valid credentials <br> 2. Observe response | 200 OK with token |               |        |
+| DMA-API-FN-002    | Start time tracking via API                      | User authenticated                  | 1. Send POST to /api/time/start <br> 2. Observe response | 201 Created with tracking ID |               |        |
+| DMA-API-FN-003    | Stop time tracking via API                       | User authenticated, tracking active | 1. Send POST to /api/time/stop <br> 2. Observe response | 200 OK with duration saved |               |        |
+| DMA-API-FN-004    | Manual time entry via API                         | User authenticated                  | 1. Send POST to /api/time/manual with valid payload <br> 2. Observe response | 201 Created with entry details |               |        |
+| DMA-API-FN-005    | Sync tracked time to server                       | User authenticated                  | 1. Send POST to /api/time/sync with local records <br> 2. Observe response | 200 OK with sync confirmation |               |        |
+| DMA-API-FN-006    | Retrieve user settings via API                    | User authenticated                  | 1. Send GET to /api/settings <br> 2. Observe response | 200 OK with settings JSON |               |        |
