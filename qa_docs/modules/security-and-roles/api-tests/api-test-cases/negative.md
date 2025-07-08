@@ -1,9 +1,0 @@
-# Negative API Test Cases – Security and Roles Module
-
-| ID               | Title                                           | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
-|-------------------|-------------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
-| SR-API-NT-001     | Create role with missing required fields         | Admin authenticated                 | 1. Send POST with incomplete data <br> 2. Observe response | 400 Bad Request with validation error |               |        |
-| SR-API-NT-002     | Assign role to non-existent user                  | Admin authenticated                 | 1. Send POST to assign role to invalid user ID <br> 2. Observe response | 400 Bad Request with error |               |        |
-| SR-API-NT-003     | Delete role assigned to users                      | Admin authenticated                 | 1. Attempt DELETE role assigned to users <br> 2. Observe response | Error or rejection preventing deletion |               |        |
-| SR-API-NT-004     | Unauthorized API request                           | User not logged in                  | 1. Send API calls without auth <br> 2. Observe response | 401 Unauthorized error |               |        |
-| SR-API-NT-005     | Malformed request body                             | Admin authenticated                 | 1. Send API calls with malformed JSON <br> 2. Observe response | 400 Bad Request with error |               |        |

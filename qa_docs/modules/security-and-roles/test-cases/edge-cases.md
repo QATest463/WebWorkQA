@@ -1,9 +1,0 @@
-# Edge Cases – Security and Roles Module
-
-| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
-|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
-| SR-EC-001   | Delete role with many assigned users        | Admin logged in                     | 1. Attempt to delete role assigned to large number of users <br> 2. Confirm deletion | System warns and blocks deletion or requires confirmation |               |        |
-| SR-EC-002   | Concurrent role updates                      | Admin logged in                     | 1. Two admins attempt to edit same role simultaneously <br> 2. Save changes | System handles concurrency properly, prevents data loss |               |        |
-| SR-EC-003   | Assign role inheritance in complex hierarchy| Admin logged in                     | 1. Define multi-level role inheritance <br> 2. Assign to users | Permissions inherited correctly across levels |               |        |
-| SR-EC-004   | Large number of roles and users              | Admin logged in                     | 1. Populate system with many roles and users <br> 2. Perform role management actions | System performs well, no performance issues |               |        |
-| SR-EC-005   | Role removal from active user session        | Admin logged in                     | 1. Remove role from user currently logged in <br> 2. User tries restricted action | Access rights updated in real-time |               |        |

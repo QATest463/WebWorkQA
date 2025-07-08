@@ -1,9 +1,0 @@
-# Security API Test Cases – Security and Roles Module
-
-| ID               | Title                                           | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
-|-------------------|-------------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
-| SR-API-SC-001     | Unauthorized role management attempt           | User not logged in                  | 1. Send POST/PUT/DELETE to /api/roles without auth <br> 2. Observe response | 401 Unauthorized error returned |               |        |
-| SR-API-SC-002     | Role-based access enforcement                   | Regular user authenticated          | 1. Attempt role management API calls <br> 2. Observe response | 403 Forbidden error returned |               |        |
-| SR-API-SC-003     | Prevent privilege escalation                    | Admin authenticated                 | 1. Attempt unauthorized permission changes <br> 2. Observe response | Operation blocked |               |        |
-| SR-API-SC-004     | Secure transmission of role data                | Admin authenticated                 | 1. Monitor network traffic during API calls <br> 2. Verify encryption | Data transmitted securely over HTTPS |               |        |
-| SR-API-SC-005     | Enforce HTTPS-only connections                  | None                                | 1. Attempt HTTP API access <br> 2. Observe behavior | Redirect to HTTPS or block request |               |        |
