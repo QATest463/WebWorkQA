@@ -1,9 +1,0 @@
-# Negative API Test Cases – Performance Module
-
-| ID               | Title                                           | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
-|-------------------|-------------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
-| PF-API-NT-001     | Call API with missing required parameters       | User authenticated                  | 1. Send request missing mandatory fields <br> 2. Observe response | 400 Bad Request with clear error |               |        |
-| PF-API-NT-002     | Call API with invalid data types                | User authenticated                  | 1. Send request with wrong data types <br> 2. Observe response | 400 Bad Request with validation error |               |        |
-| PF-API-NT-003     | Send oversized payload                          | User authenticated                  | 1. Send POST with excessive payload size <br> 2. Observe response | 413 Payload Too Large or validation error |               |        |
-| PF-API-NT-004     | Unauthorized API call without token             | Not authenticated                   | 1. Call protected endpoint without auth header <br> 2. Observe response | 401 Unauthorized error |               |        |
-| PF-API-NT-005     | Malformed JSON in request body                  | User authenticated                  | 1. Send POST with broken JSON <br> 2. Observe response | 400 Bad Request with parse error |               |        |

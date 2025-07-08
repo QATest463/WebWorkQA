@@ -1,9 +1,0 @@
-# Security API Test Cases – Mobile Push Notifications Module
-
-| ID               | Title                                           | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
-|-------------------|-------------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
-| MPN-API-SC-001    | Unauthorized send attempt blocked               | Not authenticated                   | 1. Send POST to /api/notifications without auth <br> 2. Observe response | 401 Unauthorized error returned |               |        |
-| MPN-API-SC-002    | Permission enforcement for sending notifications | Regular user authenticated          | 1. Send POST to /api/notifications <br> 2. Observe response | 403 Forbidden error returned |               |        |
-| MPN-API-SC-003    | Secure transmission of device tokens            | User registering device             | 1. Monitor network during POST to /api/devices <br> 2. Observe encryption | Tokens transmitted securely over HTTPS |               |        |
-| MPN-API-SC-004    | Enforce HTTPS-only connections                  | None                                | 1. Attempt HTTP access to API <br> 2. Observe behavior | Redirected to HTTPS or access blocked |               |        |
-| MPN-API-SC-005    | Rate limiting on send notification endpoint     | Admin authenticated                 | 1. Send multiple POST requests rapidly <br> 2. Observe response | 429 Too Many Requests or similar error |               |        |

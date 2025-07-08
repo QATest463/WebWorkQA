@@ -1,9 +1,0 @@
-# Performance Test Cases – API Integration Module
-
-| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
-|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
-| API-PF-001  | API call response time under normal load    | Admin logged in                     | 1. Trigger standard API call <br> 2. Measure response time | Response within SLA (<500ms) |               |        |
-| API-PF-002  | API call response time under peak load      | Admin logged in                     | 1. Simulate high volume calls <br> 2. Measure response time | Response time remains acceptable (<1s) |               |        |
-| API-PF-003  | Handle large payload from external API      | Admin logged in                     | 1. Trigger sync with large data set <br> 2. Observe processing | Data processed without crash or timeout |               |        |
-| API-PF-004  | Stability during network interruptions      | Admin logged in                     | 1. Start sync <br> 2. Disconnect/reconnect network | Sync resumes or fails gracefully |               |        |
-| API-PF-005  | Resource usage during high-volume API calls | Admin logged in                     | 1. Simulate many API requests <br> 2. Monitor server usage | Resource usage remains within acceptable limits |               |        |

@@ -1,9 +1,0 @@
-# Negative API Test Cases – API Integration Module
-
-| ID               | Title                                           | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
-|-------------------|-------------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
-| API-API-NT-001    | Send malformed data to external API            | Admin authenticated                 | 1. POST invalid/malformed JSON to /api/integrations/send <br> 2. Observe response | 400 Bad Request with validation error |               |        |
-| API-API-NT-002    | Receive malformed JSON from external API       | Admin authenticated                 | 1. Trigger sync with malformed response <br> 2. Observe system | Graceful error handling, user alerted |               |        |
-| API-API-NT-003    | Exceed API rate limits                          | Admin authenticated                 | 1. Rapidly trigger integration calls <br> 2. Observe response | 429 Too Many Requests with proper error |               |        |
-| API-API-NT-004    | Call API without authentication header         | Not authenticated                   | 1. Call protected endpoint without token <br> 2. Observe response | 401 Unauthorized error |               |        |
-| API-API-NT-005    | Send request with invalid API key              | Admin authenticated                 | 1. Configure integration with invalid key <br> 2. Trigger API call | Error message returned, no connection established |               |        |

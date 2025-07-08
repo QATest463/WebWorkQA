@@ -1,9 +1,0 @@
-# Negative API Test Cases – Desktop and Mobile Apps Module
-
-| ID               | Title                                           | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
-|-------------------|-------------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
-| DMA-API-NT-001    | Login with invalid credentials                  | None                                | 1. Send POST to /api/login with wrong credentials <br> 2. Observe response | 401 Unauthorized error |               |        |
-| DMA-API-NT-002    | Start tracking without authentication           | Not authenticated                   | 1. Call /api/time/start without token <br> 2. Observe response | 401 Unauthorized error |               |        |
-| DMA-API-NT-003    | Manual time entry with invalid data             | User authenticated                  | 1. Send POST with invalid time format <br> 2. Observe response | 400 Bad Request with validation error |               |        |
-| DMA-API-NT-004    | Send malformed JSON payload                     | User authenticated                  | 1. Send broken JSON to any endpoint <br> 2. Observe response | 400 Bad Request with clear error |               |        |
-| DMA-API-NT-005    | Exceed maximum payload size                     | User authenticated                  | 1. Send overly large request body <br> 2. Observe response | 413 Payload Too Large or error message |               |        |

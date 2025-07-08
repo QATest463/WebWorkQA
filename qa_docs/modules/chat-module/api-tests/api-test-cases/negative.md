@@ -1,9 +1,0 @@
-# Negative API Test Cases – Chat Module
-
-| ID               | Title                                           | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
-|-------------------|-------------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
-| CH-API-NT-001     | Send empty message via API                      | User authenticated                  | 1. POST to /api/chat/send with empty content <br> 2. Observe response | 400 Bad Request with validation error |               |        |
-| CH-API-NT-002     | Send oversized message via API                   | User authenticated                  | 1. POST to /api/chat/send with excessively large content <br> 2. Observe response | 400 Bad Request with error message |               |        |
-| CH-API-NT-003     | Unauthorized access without token                | Not authenticated                   | 1. Call /api/chat/send without token <br> 2. Observe response | 401 Unauthorized error |               |        |
-| CH-API-NT-004     | Malformed JSON payload                          | User authenticated                  | 1. POST broken JSON to /api/chat/send <br> 2. Observe response | 400 Bad Request with clear error |               |        |
-| CH-API-NT-005     | Exceed rate limit for sending messages           | User authenticated                  | 1. Rapidly send multiple messages via API <br> 2. Observe response | 429 Too Many Requests or rate limit error |               |        |

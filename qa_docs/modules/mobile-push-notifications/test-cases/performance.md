@@ -1,9 +1,0 @@
-# Performance Test Cases – Mobile Push Notifications Module
-
-| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
-|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
-| MPN-PF-001  | Send notification to large user base         | Admin logged in                     | 1. Send notification to many users | All notifications delivered without delay or errors |               |        |
-| MPN-PF-002  | Delivery latency under normal load           | User with app                        | 1. Trigger notification <br> 2. Measure delivery time | Notification received within acceptable time (<5s) |               |        |
-| MPN-PF-003  | Handle simultaneous notification campaigns   | Admin logged in                      | 1. Launch multiple campaigns at once | System handles load without failure |               |        |
-| MPN-PF-004  | App performance on receiving notifications   | User with app                        | 1. Send multiple notifications <br> 2. Observe app behavior | App remains responsive, no crashes |               |        |
-| MPN-PF-005  | Performance on slow network                  | User with app                        | 1. Simulate slow network <br> 2. Trigger notification | Notification eventually delivered without duplication |               |        |

@@ -1,9 +1,0 @@
-# Security and Access Test Cases – API Integration Module
-
-| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
-|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
-| API-SA-001  | Authentication required for API integrations | Admin logged in                     | 1. Call internal API without auth <br> 2. Observe response | 401 Unauthorized error |               |        |
-| API-SA-002  | Enforce HTTPS-only connections              | None                                | 1. Attempt HTTP access to external API <br> 2. Observe behavior | Redirected to HTTPS or blocked |               |        |
-| API-SA-003  | Secure storage of API keys                  | Admin logged in                     | 1. Check database or local storage for keys | Keys encrypted or not visible in plain text |               |        |
-| API-SA-004  | Prevent unauthorized access to integration data | User with limited role              | 1. Attempt access to admin-only integrations <br> 2. Observe response | Access denied with error |               |        |
-| API-SA-005  | Input validation to prevent injection       | Admin logged in                     | 1. Send payload with special characters <br> 2. Observe behavior | Input sanitized, no injection possible |               |        |

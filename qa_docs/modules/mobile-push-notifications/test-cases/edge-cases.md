@@ -1,9 +1,0 @@
-# Edge Cases – Mobile Push Notifications Module
-
-| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
-|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
-| MPN-EC-001  | Large number of simultaneous notifications  | Admin logged in                     | 1. Send bulk notifications to many users | All notifications delivered without system crash |               |        |
-| MPN-EC-002  | Network loss during delivery                | User with app                        | 1. Turn off network <br> 2. Trigger notification <br> 3. Turn network back on | Notification delivered when network resumes |               |        |
-| MPN-EC-003  | Expired or invalid device tokens            | Admin logged in                      | 1. Send to expired tokens <br> 2. Observe logs | Errors logged, unaffected tokens receive notification |               |        |
-| MPN-EC-004  | Multiple notifications received in short time | User with app                        | 1. Send multiple notifications quickly | All arrive in correct order without app crash |               |        |
-| MPN-EC-005  | Special characters in notification content  | Admin logged in                      | 1. Include emojis, symbols in message <br> 2. Send | Content renders correctly on device |               |        |

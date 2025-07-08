@@ -1,9 +1,0 @@
-# Security and Access Test Cases – Mobile Push Notifications Module
-
-| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
-|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
-| MPN-SA-001  | Authorization required for sending notifications | Admin not logged in                  | 1. Attempt to access send notification API <br> 2. Observe response | 401 Unauthorized error |               |        |
-| MPN-SA-002  | Prevent sending notifications without permissions | Regular user logged in               | 1. Attempt to send notification <br> 2. Observe response | 403 Forbidden error |               |        |
-| MPN-SA-003  | Secure handling of device tokens             | Admin logged in                      | 1. Review storage and transmission of tokens | Tokens encrypted, not exposed in logs |               |        |
-| MPN-SA-004  | Enforce HTTPS for notification APIs          | None                                 | 1. Attempt HTTP access to API <br> 2. Observe behavior | Redirected to HTTPS or blocked |               |        |
-| MPN-SA-005  | Block notification flooding by single user   | Admin logged in                      | 1. Send many notifications rapidly <br> 2. Observe rate limiting | Requests limited or blocked |               |        |

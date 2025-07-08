@@ -1,9 +1,0 @@
-# Security API Test Cases – API Integration Module
-
-| ID               | Title                                           | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
-|-------------------|-------------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
-| API-API-SC-001    | Block unauthorized access                       | Not authenticated                   | 1. Call protected integration endpoint without token <br> 2. Observe response | 401 Unauthorized error |               |        |
-| API-API-SC-002    | Enforce HTTPS-only connections                  | None                                | 1. Attempt HTTP request to API <br> 2. Observe response | Redirected to HTTPS or access blocked |               |        |
-| API-API-SC-003    | Secure storage of API keys                      | Admin authenticated                 | 1. Inspect storage <br> 2. Check API key storage method | Keys encrypted or inaccessible in plain text |               |        |
-| API-API-SC-004    | Rate limiting enforced on integration endpoints | Admin authenticated                 | 1. Send multiple rapid API calls <br> 2. Observe response | 429 Too Many Requests or rate limit applied |               |        |
-| API-API-SC-005    | Input validation to prevent injection attacks   | Admin authenticated                 | 1. Send payload with malicious input <br> 2. Observe response | Input sanitized, error returned if invalid |               |        |

@@ -1,9 +1,0 @@
-# Negative Test Cases – Mobile Push Notifications Module
-
-| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
-|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
-| MPN-NT-001  | Send notification without required content  | Admin logged in                     | 1. Leave message body blank <br> 2. Click Send | Validation error shown, message not sent |               |        |
-| MPN-NT-002  | User opted-out but receives notification    | User has disabled notifications     | 1. Trigger notification <br> 2. Observe device | No notification received |               |        |
-| MPN-NT-003  | Invalid device token                        | Admin logged in                     | 1. Send notification to invalid token <br> 2. Observe logs | Error returned, no crash or unintended send |               |        |
-| MPN-NT-004  | Exceed payload size limit                   | Admin logged in                     | 1. Compose overly long message <br> 2. Attempt to send | Validation error or truncation applied |               |        |
-| MPN-NT-005  | Send notification without authentication    | Not logged in                       | 1. Attempt to call send API <br> 2. Observe response | 401 Unauthorized error |               |        |

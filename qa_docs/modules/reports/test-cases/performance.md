@@ -1,9 +1,0 @@
-# Performance Test Cases – Reports
-
-| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
-|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
-| RP-PF-001   | Report generation response time             | User has reportable data            | 1. Select report type <br> 2. Click Generate <br> 3. Measure response time | Report generation completes within acceptable threshold (e.g. <2s for standard size) |               |        |
-| RP-PF-002   | Load time for Reports page                  | User logged in                      | 1. Navigate to Reports page <br> 2. Measure load time | Page loads within acceptable threshold (e.g. <1.5s) |               |        |
-| RP-PF-003   | High concurrency report generation          | None                                | 1. Simulate multiple concurrent users generating reports <br> 2. Observe system behavior | System handles high concurrency without errors or degradation |               |        |
-| RP-PF-004   | Export report performance                   | User has generated report           | 1. Click Export as PDF/CSV <br> 2. Measure export processing time | Export completes within acceptable time (e.g. <2s) |               |        |
-| RP-PF-005   | Large data set report generation time       | User has large data set             | 1. Select long date range or large filter <br> 2. Click Generate <br> 3. Measure response time | System completes generation without timeout and within acceptable performance window |               |        |
