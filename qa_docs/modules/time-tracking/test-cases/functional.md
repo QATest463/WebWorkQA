@@ -1,0 +1,22 @@
+# Functional Test Cases – Time Tracking Module
+
+| ID        | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
+|-----------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
+| TT-FN-001 | Start time tracking                         | User logged in                      | 1. Navigate to Time Tracker <br> 2. Click Start <br> 3. Observe timer | Timer starts counting time |               |        |
+| TT-FN-002 | Stop time tracking                          | Timer running                        | 1. Click Stop <br> 2. Confirm stop action | Timer stops, tracked time saved as entry |               |        |
+| TT-FN-003 | Pause time tracking                         | Timer running                        | 1. Click Pause <br> 2. Observe timer behavior | Timer pauses without losing current count |               |        |
+| TT-FN-004 | Resume paused timer                         | Timer paused                         | 1. Click Resume <br> 2. Observe timer | Timer resumes from paused count |               |        |
+| TT-FN-005 | Switch between projects/tasks while tracking | Timer running                        | 1. Click Change Project/Task <br> 2. Select new assignment | Timer associates new project/task without resetting count |               |        |
+| TT-FN-006 | View live tracked time                       | Timer running or paused              | 1. Observe timer widget | Correct live tracked time displayed |               |        |
+| TT-FN-007 | Add manual time entry                        | User logged in with permissions     | 1. Click "Add Time" <br> 2. Enter valid details <br> 3. Save | New manual entry added |               |        |
+| TT-FN-008 | Edit manual time entry                       | Existing manual entry               | 1. Click Edit on entry <br> 2. Change details <br> 3. Save | Changes saved and reflected |               |        |
+| TT-FN-009 | Delete manual time entry                     | Existing manual entry               | 1. Click Delete <br> 2. Confirm deletion | Entry removed from list |               |        |
+| TT-FN-010 | View daily/weekly/monthly summaries          | User logged in                      | 1. Navigate to Time Tracking Summary <br> 2. Select time range | Correct summary displayed for selected range |               |        |
+| TT-FN-011 | Integration with Timesheet                   | User tracked time available         | 1. Navigate to Timesheet page <br> 2. Check entries | Tracked time correctly reflected in Timesheet |               |        |
+| TT-FN-012 | Open Break Modal                           | User logged in   | 1. Click Break icon in tracker widget<br>2. Observe modal                             | Break modal opens with list of break types            |
+| TT-FN-013 | Cancel Break Modal                         | Break modal open | 1. Click Cancel button in modal<br>2. Observe modal                                   | Modal closes without starting break                   |
+| TT-FN-014 | Start Break with Smoking Type               | User logged in   | 1. Open Break modal<br>2. Select Smoking<br>3. Click Start Break                      | Modal closes, Break timer starts with Smoking type    |
+| TT-FN-015 | Start Break While Tracker is Running        | Tracker running  | 1. Click Break icon<br>2. Select any break type<br>3. Click Start Break               | Tracker switches to Break timer with selected type    |
+| TT-FN-016 | Break Type Selection UI                     | Break modal open | 1. Observe list of break types in modal<br>2. Verify displayed limit text for each   | All break types with correct limit info are shown     |
+| TT-FN-017 | Verify Break Countdown Starts Correctly     | Break started    | 1. Observe timer on tracker widget                                                    | Timer shows 00:00:00 and starts counting up           |
+| TT-FN-018 | Verify Break Label on Tracker Widget        | Break started    | 1. Observe tracker widget while break is running                                      | Tracker shows "Break: [Type]" with timer              |
