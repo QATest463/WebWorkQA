@@ -1,9 +1,0 @@
-# Security and Access Test Cases – User Onboarding & Welcome Flow Module
-
-| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
-|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
-| UOWF-SA-001 | Prevent automated/bot registrations         | None                                | 1. Attempt registration without passing CAPTCHA <br> 2. Observe response | Registration blocked with error message |               |        |
-| UOWF-SA-002 | Email verification enforced                 | User registered but unverified      | 1. Attempt to log in <br> 2. Observe response | Access denied until email verified |               |        |
-| UOWF-SA-003 | Secure storage of registration data         | User registered                     | 1. Check database for stored user data | Passwords hashed, sensitive data encrypted |               |        |
-| UOWF-SA-004 | Role assignment on registration              | None                                | 1. Complete registration <br> 2. Check assigned role | Default role assigned correctly (e.g., User) |               |        |
-| UOWF-SA-005 | Rate limiting for registration attempts      | None                                | 1. Submit registration form multiple times quickly | System enforces rate limit or blocks further attempts |               |        |

@@ -1,9 +1,0 @@
-# Security API Test Cases – User Onboarding & Welcome Flow Module
-
-| ID               | Title                                           | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
-|-------------------|-------------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
-| UOWF-API-SC-001   | Unauthorized registration attempt blocked      | None                                | 1. Send POST with invalid/malformed data <br> 2. Observe response | 400 Bad Request with error message |               |        |
-| UOWF-API-SC-002   | Email verification required for login          | User registered but unverified      | 1. Attempt POST to /api/login <br> 2. Observe response | 403 Forbidden or error indicating verification needed |               |        |
-| UOWF-API-SC-003   | Rate limiting on registration endpoint         | None                                | 1. Send multiple POSTs rapidly to /api/register <br> 2. Observe response | 429 Too Many Requests or similar error |               |        |
-| UOWF-API-SC-004   | Secure transmission of registration data       | User registers                      | 1. Monitor network traffic during API call <br> 2. Check encryption | Data transmitted securely over HTTPS |               |        |
-| UOWF-API-SC-005   | Enforce HTTPS-only connections                 | None                                | 1. Attempt HTTP access to API <br> 2. Observe behavior | Redirected to HTTPS or access blocked |               |        |
