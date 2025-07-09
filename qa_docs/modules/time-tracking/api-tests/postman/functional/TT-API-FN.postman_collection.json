@@ -1,0 +1,709 @@
+{
+	"info": {
+		"_postman_id": "8beb2651-5a45-49b2-bfc0-3eb397c41a32",
+		"name": "TT-API-FN",
+		"description": "Collection to test all Time Tracking API endpoints for WebWork.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46033826"
+	},
+	"item": [
+		{
+			"name": "TT-API-FN-001",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{auth}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "track-type",
+						"value": "website",
+						"type": "text"
+					},
+					{
+						"key": "owner-id",
+						"value": "208178",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"start\": 1751478077127,\n    \"contract_id\": null,\n    \"project_id\": null,\n    \"task_id\": \"no_task\",\n    \"task_title\": \"No task\",\n    \"memo\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/start-tracker",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"start-tracker"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TT-API-FN-002",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.sendRequest({",
+							"    url: pm.environment.get(\"baseUrl\") + \"/api/start-tracker\",",
+							"    method: 'POST',",
+							"    header: {",
+							"        'Authorization': 'Bearer ' + pm.environment.get('authToken'),",
+							"        'owner-id': pm.environment.get('ownerId'),",
+							"        'track-type': pm.environment.get('trackType'),",
+							"        'Content-Type': 'application/json'",
+							"    },",
+							"    body: {",
+							"        mode: 'raw',",
+							"        raw: JSON.stringify({",
+							"            \"start\": Date.now(),",
+							"            \"contract_id\": null,",
+							"            \"project_id\": null,",
+							"            \"task_id\": \"no_task\",",
+							"            \"task_title\": \"No task\",",
+							"            \"memo\": \"\"",
+							"        })",
+							"    }",
+							"}, function (err, res) {",
+							"    console.log(\"Start Tracker Response:\", res);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Result contains need_update\", function () {",
+							"    const jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.property('result');",
+							"    pm.expect(jsonData.result).to.have.property('need_update');",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{auth}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "owner-id",
+						"value": "{{ownerId}}",
+						"type": "text"
+					},
+					{
+						"key": "track-type",
+						"value": "{{trackType}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"end\": 1751478078127\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/stop-tracker",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"stop-tracker"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TT-API-FN-003",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.sendRequest({",
+							"    url: pm.environment.get(\"baseUrl\") + \"/api/start-tracker\",",
+							"    method: 'POST',",
+							"    header: {",
+							"        'Authorization': 'Bearer ' + pm.environment.get('authToken'),",
+							"        'owner-id': pm.environment.get('ownerId'),",
+							"        'track-type': pm.environment.get('trackType'),",
+							"        'Content-Type': 'application/json'",
+							"    },",
+							"    body: {",
+							"        mode: 'raw',",
+							"        raw: JSON.stringify({",
+							"            \"start\": Date.now(),",
+							"            \"contract_id\": null,",
+							"            \"project_id\": null,",
+							"            \"task_id\": \"no_task\",",
+							"            \"task_title\": \"No task\",",
+							"            \"memo\": \"\"",
+							"        })",
+							"    }",
+							"}, function (err, res) {",
+							"    console.log(\"✅ Pre-request (Start Tracker) sent:\", res);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Result is acknowledged\", function () {",
+							"    const jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.property('result');",
+							"    pm.expect(jsonData.result.acknowledged).to.be.true;",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{auth}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "owner-id",
+						"value": "{{ownerId}}",
+						"type": "text"
+					},
+					{
+						"key": "track-type",
+						"value": "{{trackType}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"_id\": \"6864b7c2df3fddf659483749\",\n  \"track_type\": \"{{trackType}}\",\n  \"contract_id\": \"599327\",\n  \"owner_id\": \"{{ownerId}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/selected-data",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"selected-data"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TT-API-FN-004",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.sendRequest({",
+							"    url: pm.environment.get(\"baseUrl\") + \"/api/start-tracker\",",
+							"    method: 'POST',",
+							"    header: {",
+							"        'Authorization': 'Bearer ' + pm.environment.get('authToken'),",
+							"        'owner-id': pm.environment.get('ownerId'),",
+							"        'track-type': pm.environment.get('trackType'),",
+							"        'Content-Type': 'application/json'",
+							"    },",
+							"    body: {",
+							"        mode: 'raw',",
+							"        raw: JSON.stringify({",
+							"            \"start\": Date.now(),",
+							"            \"contract_id\": null,",
+							"            \"project_id\": null,",
+							"            \"task_id\": \"no_task\",",
+							"            \"task_title\": \"No task\",",
+							"            \"memo\": \"\"",
+							"        })",
+							"    }",
+							"}, function (err, res) {",
+							"    console.log(\"✅ Pre-request (Start Tracker) sent:\", res);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response contains data array\", function () {",
+							"    const jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.property('data');",
+							"    pm.expect(jsonData.data).to.be.an('array').that.is.not.empty;",
+							"});",
+							"",
+							"pm.test(\"First data item has required fields\", function () {",
+							"    const item = pm.response.json().data[0];",
+							"    pm.expect(item).to.have.property('id');",
+							"    pm.expect(item).to.have.property('user_id');",
+							"    pm.expect(item).to.have.property('contract_id');",
+							"    pm.expect(item).to.have.property('start');",
+							"    pm.expect(item).to.have.property('end');",
+							"    pm.expect(item).to.have.property('notes');",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{auth}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "owner-id",
+						"value": "{{ownerId}}",
+						"type": "text"
+					},
+					{
+						"key": "track-type",
+						"value": "{{trackType}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": {{userid}},\n    \"contract_id\": 599327,\n    \"task_id\": 0,\n    \"date\": \"2025-07-02\",\n    \"time_interval\": [\n        {\n            \"start\": \"15:00\",\n            \"end\": \"15:30\",\n            \"errors\": {\n                \"start\": \"\",\n                \"end\": \"\"\n            },\n            \"index\": 1\n        }\n    ],\n    \"notes\": \"555\",\n    \"isManual\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{manualTime}}/api/add-time/create",
+					"host": [
+						"{{manualTime}}"
+					],
+					"path": [
+						"api",
+						"add-time",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TT-API-FN-005-1.Add",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Проверка статуса",
+							"pm.test(\"Status code is 200 or 201\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							"",
+							"// Извлекаем timelineId",
+							"const jsonData = pm.response.json();",
+							"if (jsonData && jsonData.data && jsonData.data[0] && jsonData.data[0].id) {",
+							"    pm.environment.set(\"Id\", jsonData.data[0].id);",
+							"    console.log(\"Saved Id:\", jsonData.data[0].id);",
+							"} else {",
+							"    console.log(\"No Id found in response!\");",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{auth}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "owner-id",
+						"value": "{{ownerId}}",
+						"type": "text"
+					},
+					{
+						"key": "track-type",
+						"value": "{{trackType}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": \"{{userId}}\",\n    \"contract_id\": \"{{contractId}}\",\n    \"task_id\": 0,\n    \"date\": \"{{date}}\",\n    \"time_interval\": [\n        {\n            \"start\": \"{{startTime}}\",\n            \"end\": \"{{endTime}}\",\n            \"errors\": {},\n            \"index\": 1\n        }\n    ],\n    \"notes\": \"Created for edit test\",\n    \"isManual\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{manualTime}}/api/add-time/create/data",
+					"host": [
+						"{{manualTime}}"
+					],
+					"path": [
+						"api",
+						"add-time",
+						"create",
+						"data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TT-API-FN-005-2.Edit",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"packages": {},
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{auth}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "owner-id",
+						"value": "{{ownerId}}",
+						"type": "text"
+					},
+					{
+						"key": "track-type",
+						"value": "{{trackType}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Id\": \"{{Id}}\",\n    \"date\": \"{{date}}\",\n    \"start\": \"{{startTime}}\",\n    \"end\": \"{{endTime}}\",\n    \"user_id\": \"{{userId}}\",\n    \"tasksId\": [],\n    \"projectsId\": []\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{manualTime}}/api/edit-timesheet/time-range",
+					"host": [
+						"{{manualTime}}"
+					],
+					"path": [
+						"api",
+						"edit-timesheet",
+						"time-range"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TT-API-FN-006-1.Add",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Проверка статуса",
+							"pm.test(\"Status code is 200 or 201\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							"",
+							"// Извлекаем timelineId",
+							"const jsonData = pm.response.json();",
+							"if (jsonData && jsonData.data && jsonData.data[0] && jsonData.data[0].id) {",
+							"    pm.environment.set(\"Id\", jsonData.data[0].id);",
+							"    console.log(\"Saved Id:\", jsonData.data[0].id);",
+							"} else {",
+							"    console.log(\"No Id found in response!\");",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{auth}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "owner-id",
+						"value": "{{ownerId}}",
+						"type": "text"
+					},
+					{
+						"key": "track-type",
+						"value": "{{trackType}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": \"{{userId}}\",\n    \"contract_id\": \"{{contractId}}\",\n    \"task_id\": 0,\n    \"date\": \"{{date}}\",\n    \"time_interval\": [\n        {\n            \"start\": \"{{startTime}}\",\n            \"end\": \"{{endTime}}\",\n            \"errors\": {},\n            \"index\": 1\n        }\n    ],\n    \"notes\": \"Created for edit test\",\n    \"isManual\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{manualTime}}/api/add-time/create/data",
+					"host": [
+						"{{manualTime}}"
+					],
+					"path": [
+						"api",
+						"add-time",
+						"create",
+						"data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TT-API-FN-006-2.Del",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{auth}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "owner-id",
+						"value": "{{ownerId}}",
+						"type": "text"
+					},
+					{
+						"key": "track-type",
+						"value": "{{trackType}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"timelineId\": \"{{Id}}\",\n  \"timelineFilter\": {\n    \"user_id\": \"{{userId}}\",\n    \"timezone\": null,\n    \"tasksId\": [],\n    \"projectsId\": [],\n    \"startDate\": \"{{date}}\",\n    \"endDate\": null\n  }\n}"
+				},
+				"url": {
+					"raw": "{{manualTime}}/api/edit-timesheet/delete-timeline",
+					"host": [
+						"{{manualTime}}"
+					],
+					"path": [
+						"api",
+						"edit-timesheet",
+						"delete-timeline"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
