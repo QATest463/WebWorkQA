@@ -23,11 +23,10 @@ This repository contains structured, professional QA documentation organized by 
 ---
 
 ## 🗂️ Module Examples
-✅ Authentication  
-✅ Activity and Productivity  
-✅ Billing and Payments  
-✅ Admin Panel  
-... *(and more planned)*
+✅ Time Tracking *(first complete example, in progress)*  
+✅ Authentication *(planned)*  
+✅ User Profile / Account Management *(planned)*  
+✅ Tasks and Projects *(planned)*
 
 Each module includes:
 - Structured **Test Cases** in Markdown tables
@@ -38,8 +37,9 @@ Each module includes:
 ---
 
 ## 🧪 Tools Used
-- [Playwright](https://playwright.dev) for automation (planned)
-- Postman for API testing
+- [Playwright](https://playwright.dev) for UI automation 
+- [PyTest](https://pytest.org) for API automation 
+- Postman for API testing (manual / exploratory)
 - Markdown for documentation
 - Git/GitHub for version control
 
@@ -48,12 +48,27 @@ Each module includes:
 ## 🌟 Purpose
 This project demonstrates:
 - Realistic QA documentation practices
-- Modular, scalable structure for teamwork
-- Readiness for real-world projects and collaboration
+- Modular and scalable structure for team collaboration
+- Readiness for real-world projects and teamwork
+- Transition from manual API tests in Postman to automated tests in PyTest
+
+---
+
+## 🛠️ Work in Progress
+> This repository is under active development.  
+> Modules will be added **incrementally**.
+
+**✅ In Progress:**  
+- Time Tracking
+
+**🗓️ Next Planned Modules:**  
+- Authentication / Authorization
+- User Profile / Account Management
+- Tasks and Projects
 
 ---
 
 ## 🚀 Author
-**Vahe Hunanyan**
-- QA Engineer (Manual + Automation)
+**Vahe Hunanyan**  
+- QA Engineer (Manual + Automation)  
 - Open to feedback and collaboration!
