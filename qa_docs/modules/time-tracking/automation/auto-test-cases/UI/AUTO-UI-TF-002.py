@@ -4,7 +4,6 @@ from playwright.sync_api import Playwright, sync_playwright
 
 
 def login(page):
-    """➡️ Login to WebWork Tracker"""
     print("➡️ Logging in")
     page.goto("https://www.webwork-tracker.com/login")
     page.fill("#email", "imperiya.prazdnika71017@mail.ru")
@@ -16,7 +15,6 @@ def login(page):
 
 
 def add_time_entry(page):
-    """➡️ Add a manual time """
     print("➡️ Clicking Quick Add")
     page.locator(".dropdown.d-flex.align-items-center").click()
     print("➡️ Selecting 'Time entry'")
@@ -43,7 +41,6 @@ def add_time_entry(page):
 
 
 def go_to_timeline(page, context_msg=""):
-    """➡️ Navigate to Reports > Timeline page"""
     print(f"➡️ Navigating to Timeline {context_msg}")
     page.get_by_role("link", name="Reports").click()
     page.get_by_role("link", name="Timeline").click()
@@ -52,7 +49,6 @@ def go_to_timeline(page, context_msg=""):
 
 
 def edit_time_entry(page):
-    """➡️ Edit time """
     print("➡️ Navigating to Timesheets > Time Editor")
     page.get_by_role("link", name="Timesheets").click()
     page.get_by_role("link", name="Time Editor").click()
@@ -64,7 +60,6 @@ def edit_time_entry(page):
 
 
 def delete_time_entry(page):
-    """➡️ Delete time """
     print("➡️ Navigating to Timesheets > Time Editor")
     page.get_by_role("link", name="Timesheets").click()
     page.get_by_role("link", name="Time Editor").click()

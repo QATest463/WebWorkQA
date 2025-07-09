@@ -1,13 +1,8 @@
+from qa_docs.automation.library.helpers_ui.quick_add_modal import quick_add_modal
+
 def add_manual_time_entry(page, project="Project 1", task="Task", start_time="09:00", end_time="10:00", description="text1"):
-    print("➡️ Clicking Quick Add")
-    page.locator(".dropdown.d-flex.align-items-center").click()
 
-    print("➡️ Selecting 'Time entry'")
-    page.get_by_text("Time entry", exact=True).click()
-
-    print("➡️ Waiting for modal")
-    page.wait_for_selector("[role='dialog']:not(.d-none)")
-    print("✅ Modal opened")
+    quick_add_modal(page)
 
     print("➡️ Selecting Project")
     page.get_by_role("dialog", name="Add Time close icon").locator("img").nth(3).click()

@@ -6,14 +6,14 @@ from qa_docs.automation.library.helpers_ui import login
 
 def verify_break_report(page, user_name, break_policy, break_duration):
 
-    print("➡️ Navigating to Reports > Breaks")
+    print("➡️ Navigating to Reports/Breaks")
     page.get_by_role("link", name="Reports").click()
     page.get_by_role("link", name="Breaks").click()
     page.wait_for_url(re.compile(r".*/reports/breaks.*"))
     print("✅ Breaks page loaded")
 
     today_str = datetime.now().strftime("%b %d, %Y")
-    print(f"Expecting date: {today_str}")
+    print(f"✅ Expecting date: {today_str}")
 
     page.wait_for_selector("div[role='row']")
     rows = page.locator("div[role='row']").filter(has_text=user_name)
