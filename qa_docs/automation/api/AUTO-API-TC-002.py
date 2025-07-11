@@ -2,7 +2,7 @@ import pytest
 import requests
 
 # === CONFIGURATION ===
-# Base URLs for different WebWork API services
+# Base URLs for different WebWork api services
 BASE_URL = "https://realtime.webwork-tracker.com"
 SELECTED_DATA_URL = "https://background.webwork-tracker.com/api/selected-data"
 

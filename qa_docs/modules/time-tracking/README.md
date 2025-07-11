@@ -1,93 +1,51 @@
-# Time Tracking Module
+# 📘 Time Tracking Module
 
-## 📌 Overview
-
-This module covers the **Time Tracking** feature in WebWork.  
-It allows users to **start, stop, pause, and manage timers** while working on projects and tasks.  
-Tracked time is used for billing, productivity reports, and payroll.
+This folder contains all QA documentation and assets for the **Time Tracking** feature in WebWork.  
+Time Tracking is a critical module for recording user work hours, billing, and productivity reporting.
 
 ---
 
-## 🔍 What is tested
+## ✅ Scope of Testing
 
-### Functional Scenarios:
-- Start time tracking
-- Stop time tracking
-- Pause/resume time tracking
-- Switch between projects/tasks while tracking
-- View live tracked time
-- Add manual time entry
-- Edit manual time entry
-- Delete manual time entry
-- View daily/weekly/monthly tracked summaries
-- Integration with Timesheet module
+- Start, stop, and pause timers
+- Add, edit, and delete manual time entries
+- Break policy handling
+- UI/UX checks (modals, forms, responsiveness)
+- API endpoints for time tracking
+- Role-based access (Admin, Manager, User)
 
 ---
 
-### Security and Access:
+## 📂 Folder Structure
+
+- `test-cases/` – detailed functional, negative, and edge test cases
+- `checklists/` – execution checklists (e.g., regression, smoke)
+- `bug-reports/` – open, fixed, and closed bugs
+- `api-tests/` – API test cases, Postman collections
+- `automation/` – Playwright and PyTest automated scripts
+- `exploratory-sessions/` – session notes and charters
+- `traceability-matrix/` – mapping of requirements to test cases
+- `requirements-review/` – notes and questions on requirements
+- `sql-checks/` – sample queries for backend validation
+
+---
+
+## 🔒 Security & Access
 - Only authenticated users can track time
-- Role-based access enforced (Admin, Manager, User)
-- Validation of time entries and ownership
-- Prevent editing other users' tracked entries
+- Role-based permissions:
+  - **Admin:** view and edit all entries
+  - **Manager:** view team entries
+  - **User:** view/edit own entries
 
 ---
 
-### Edge Cases:
-- Starting multiple timers simultaneously
-- Overlapping manual and automatic entries
-- Rapidly switching tasks/projects
-- Network disconnect/reconnect while tracking
-
----
-
-### UI/UX:
-- Responsive timer widget
-- Clear start/stop/pause controls
-- Easy-to-use forms for manual time
-- Confirmation dialogs for deletions
-- Loading indicators during operations
-- Validation errors clearly displayed
-
----
-
-## 📁 Module Folder Structure
-- test-cases/
-  - functional.md
-  - negative-scenarios.md
-  - edge-cases.md
-  - ui-ux.md
-  - security-and-access.md
-  - performance.md
-- checklists/
-  - checklist.md
-- bug-reports/
-  - open/
-  - fixed/
-  - in-review/
-  - closed/
-- api-tests/
-  - api-checklist.md
-  - api-test-cases/
-    - functional.md
-    - security.md
-    - negative.md
-  - postman/
-    - postman_collection.json
-- README.md
-
----
-
-## 🧪 Priority
-
-This module has **High Priority**.  
-Accurate time tracking is critical for billing, productivity analysis, and employee accountability.  
-Errors can lead to incorrect invoices or lost time data.
+## 🧪 Priorities
+- **High Priority:** billing accuracy, productivity tracking, data integrity
+- **Medium Priority:** UI responsiveness, error handling
 
 ---
 
 ## 📎 Notes
-
-- Validate continuous tracking sessions without gaps.
-- Test integration with Timesheet and Reports.
-- Ensure security and ownership of entries.
-- Test UI for responsiveness and accessibility.
+- Integrates with Timesheet and Reports modules
+- Includes **manual** test cases and **automated** tests (Playwright UI tests, PyTest API tests)
+- Work in progress – additional scenarios and test assets will be added

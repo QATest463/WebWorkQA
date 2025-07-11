@@ -3,7 +3,7 @@ import time
 import pytest
 
 # === CONFIGURATION ===
-# Base URLs for different WebWork API services
+# Base URLs for different WebWork api services
 BASE_URL = "https://background.webwork-tracker.com"
 SELECTED_DATA_URL = f"{BASE_URL}/api/selected-data"
 
@@ -27,7 +27,7 @@ OWNER_ID = 208178
 def tracking_context():
     return {"start_id": None}
 
-# 1. Starts tracking via API
+# 1. Starts tracking via api
 def test_01_start_tracking(tracking_context):
     url = f"{BASE_URL}/api/start-tracker"
     payload = {
@@ -53,7 +53,7 @@ def test_02_wait_tracking_period():
     print(f"⏳ Waiting {wait_seconds} seconds to accumulate time...")
     time.sleep(wait_seconds)
 
-# 3. Stops tracking via API
+# 3. Stops tracking via api
 def test_03_stop_tracking(tracking_context):
     url = f"{BASE_URL}/api/stop-tracker"
     payload = {
