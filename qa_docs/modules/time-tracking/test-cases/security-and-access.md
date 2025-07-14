@@ -1,11 +1,13 @@
-# Security and Access Test Cases – Time Tracking Module
+# Edge Cases – Time Tracking Module
 
-| ID          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
-|-------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
-| TT-SA-001   | Unauthorized access blocked                 | User not logged in                  | 1. Attempt to access /time-tracking page without authentication | User is redirected to login or shown access denied |               |        |
-| TT-SA-002   | Only authenticated users can start timer    | User not logged in                  | 1. Attempt to start timer without authentication | System blocks action, prompts login |               |        |
-| TT-SA-003   | Role-based access enforced for manual entries | User with limited role              | 1. Log in as restricted user <br> 2. Attempt to add/edit/delete manual entry | Action blocked or error shown |               |        |
-| TT-SA-004   | User can only edit/delete own manual entries | User logged in                      | 1. Navigate to another user's manual entry <br> 2. Attempt to edit/delete | Option hidden or error shown |               |        |
-| TT-SA-005   | API rejects unauthorized create/edit/delete | User not logged in                  | 1. Send POST/PUT/DELETE to /api/timetracking without token | 401 Unauthorized error returned |               |        |
-| TT-SA-006   | API enforces user ownership of entries      | User logged in                      | 1. Modify request to include another user's entry ID <br> 2. Send request | 403 Forbidden or validation error returned |               |        |
-| TT-SA-007   | Enforce HTTPS-only connections              | None                                | 1. Attempt to access application over HTTP <br> 2. Observe behavior | Server redirects to HTTPS or blocks insecure request |               |        |
+| ID        | Title                                          | Precondition                      | Steps                                                        | Expected Result                          | Actual Result | Status |
+|-----------|------------------------------------------------|-----------------------------------|--------------------------------------------------------------|------------------------------------------|---------------|--------|
+| TT-SA-001 | Unauthorized access blocked                    | User not logged in                | 1. Attempt to access /time-tracking page                     | Redirect to login or access denied       |               |        |
+| TT-SA-002 | Auth required to start timer                   | User not logged in                | 1. Attempt to start timer                                    | Action blocked, login prompted           |               |        |
+| TT-SA-003 | Role-based access for manual entries           | User with limited role            | 1. Attempt to add/edit/delete manual entry                   | Action blocked or error shown            |               |        |
+| TT-SA-004 | Edit/delete only own entries                   | User logged in                    | 1. Try to modify another user's entry                        | Option hidden or error shown             |               |        |
+| TT-SA-005 | API rejects unauthorized actions               | User not logged in                | 1. Send POST/PUT/DELETE without token                        | 401 Unauthorized error returned          |               |        |
+| TT-SA-006 | API enforces ownership of entries              | User logged in                    | 1. Modify request with another user's ID                     | 403 Forbidden or error returned          |               |        |
+| TT-SA-007 | Enforce HTTPS connections                      | None                              | 1. Try accessing over HTTP                                   | Server redirects to HTTPS or blocks      |               |        |
+| TT-SA-008 | QuickAdd modal access restricted               | User not logged in                | 1. Attempt to open QuickAdd modal                            | Modal access denied or redirect to login |               |        |
+| TT-SA-009 | Break modal access restricted                  | User not logged in                | 1. Attempt to open Break modal                               | Modal access denied or redirect to login |               |        |

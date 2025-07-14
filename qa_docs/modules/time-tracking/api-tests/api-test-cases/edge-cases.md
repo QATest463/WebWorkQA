@@ -1,0 +1,10 @@
+# ⚡ Edge Cases API Test Cases – Time Tracking Module
+
+| ID            | Title                                            | Precondition       | Steps                                                          | Expected Result                       | Actual Result | Status |
+|---------------|--------------------------------------------------|--------------------|----------------------------------------------------------------|---------------------------------------|---------------|--------|
+| TT-API-EC-001 | Simultaneous timer start requests                | User authenticated | Send multiple /api/start-tracker requests rapidly              | Only one timer starts, others error   |               |        |
+| TT-API-EC-002 | Simultaneous Break start requests                | User authenticated | Send multiple /api/start-break requests rapidly                | Only one break starts, others error   |               |        |
+| TT-API-EC-003 | Overlapping manual time and break entries        | User authenticated | Add manual time that overlaps with existing break              | System blocks or warns                |               |        |
+| TT-API-EC-004 | Rapid switch project/task API calls              | Timer running      | Rapid POST to /api/selected-data with different projects/tasks | System updates without error          |               |        |
+| TT-API-EC-005 | Network loss during tracking                     | Timer running      | Simulate network disconnect during timer                       | Tracking recovers or syncs correctly  |               |        |
+| TT-API-EC-006 | Long-running session creation                    | User authenticated | Start timer for 24h simulation                                 | System tracks without error           |               |        |
