@@ -1,68 +1,78 @@
 # 🗺️ WebWorkQA – Project Roadmap
 
-This document outlines the planned development of the **WebWorkQA** repository.  
-It helps communicate the current status, priorities, and planned future modules.
+A clear roadmap for documenting and automating QA for the WebWork platform.
 
 ---
 
-## ✅ Project Goals
-- Create clear, modular QA documentation for the WebWork platform
-- Cover both **manual** and **automated** test cases
-- Demonstrate professional QA engineering practices
-- Provide a realistic, incremental development approach
+## 🎯 Project Goals
+
+- ✅ Build structured QA documentation (manual + automated)
+- ✅ Follow modular structure per feature
+- ✅ Include both exploratory and formal testing
+- ✅ Support API and UI levels
+- ✅ Use modern tools: Postman, Playwright, PyTest
 
 ---
 
-## 📌 Current Status
-✅ **Time Tracking** module in progress:  
-- Manual test cases, checklists, bug reports, API tests, Postman collections
-- Playwright + Python UI automation scripts
-- Planned PyTest automation for API tests
+## 🟢 Current Status
+
+✅ **Time Tracking** module  
+- Manual test cases and checklists completed  
+- Playwright UI automation implemented  
+- API tests documented in Postman  
+- PyTest automation in progress  
+- Exploratory notes & SQL/backend checks included
 
 ---
 
-## 🚀 In Progress
-> Modules that are actively being developed and improved:
-- **Time Tracking** (serves as the first complete example)
+## 🛠️ In Progress
+
+- Add `pytest-api` tests for core endpoints
+- Write exploratory notes and observations
+- Expand SQL/backend data integrity checks
 
 ---
 
-## 🗓️ Next Planned Modules
-> Modules prioritized for the next development stages:
-- **Authentication / Authorization**
-- **User Profile / Account Management**
-- **Tasks and Projects**
+## 📌 Next Modules
+
+Planned high-priority additions:
+- Authentication / Authorization
+- User Profile / Account Management
+- Tasks and Projects
 
 ---
 
-## 🌟 Future Ideas and Extensions
-> Additional modules and improvements to consider over time:
+## 🌱 Future Modules (Backlog)
+
 - Billing and Payments
-- Notifications (Email, Push)
+- Notifications (Push, Email)
 - Reports
-- Settings & Preferences
-- Admin Panel / Roles and Permissions
+- Settings and Preferences
+- Admin Panel & Roles
+- Desktop and Mobile Clients
 - Activity and Productivity
-- API Integration
-- Desktop and Mobile Apps
-- User Onboarding / Welcome Flow
+- API Integrations
 - Data Export / Import
 - Access Logs / Audit Trail
-- Mobile Push Notifications
-- Performance testing
+- Onboarding Flows
+- Performance & Load Testing
 
 ---
 
 ## 🧭 Approach
-> Modules will be added **incrementally** to ensure high quality and maintainability.  
-> Each module is designed to include:
-- Test Cases (Markdown)
-- Checklists
-- Bug Reports
-- API Test Cases (Markdown)
-- Postman Collections
-- Automated Tests (Playwright for UI, PyTest for API)
+
+Each module includes:
+
+- ✅ Test Cases (positive, negative, edge, etc.)
+- ✅ Manual Checklists (functional + non-functional)
+- ✅ Bug Reports (categorized)
+- ✅ API Test Cases & Postman collection
+- ✅ Automation: Playwright (UI) + PyTest (API)
+- ✅ Exploratory Sessions
+- ✅ Backend/SQL checks (as needed)
+
+Modules are added incrementally for maintainability and clarity.
 
 ---
 
-⭐ This roadmap may evolve over time as priorities shift or new requirements are identified.
+✍️ Maintained by **Vahe Hunanyan**
