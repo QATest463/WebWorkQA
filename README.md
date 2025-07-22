@@ -50,6 +50,10 @@ It follows a real-world QA approach — from manual testing to automation — an
         - security-and-access.md
       - README.md
   - reports/
+    - bug-reports/
+      - functional/
+      - non-functional/
+    - sprint-reports/
   - templates/
   - README.md
 ROADMAP.md
