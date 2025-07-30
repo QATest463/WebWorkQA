@@ -69,9 +69,9 @@ README.md
 
 ## 🔜 Next Planned Modules
 
-- Authentication / Authorization
+- Authentication 
 - User Profile / Account Management
-- Tasks and Projects
+- Projects and Tasks
 
 ---
 
