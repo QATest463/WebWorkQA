@@ -1,5 +1,16 @@
-# (Test Type) – (Module Name)
+# Performance Test Cases – Authentication Module
 
-| ID                          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
-|-----------------------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
-| (ModuleName)-(TestType)-XXX |       |         |  |  |               |        |
+
+| ID              | Title                                                    | Precondition            | Steps                                                                                 | Expected Result                                   | Actual Result | Status |
+|-----------------|----------------------------------------------------------|-------------------------|---------------------------------------------------------------------------------------|---------------------------------------------------|---------------|--------|
+| AUTH-PERF-001   | Registration form loads quickly                          | None                    | 1. Navigate to registration page                                                      | Page loads in under 2 seconds                     |               |        |
+| AUTH-PERF-002   | Login form loads quickly                                 | None                    | 1. Navigate to login page                                                             | Page loads in under 2 seconds                     |               |        |
+| AUTH-PERF-003   | Registration submission responds promptly                | Valid data entered      | 1. Fill and submit registration form                                                  | Response within 1–2 seconds                       |               |        |
+| AUTH-PERF-004   | Login responds promptly                                  | Valid credentials       | 1. Fill and submit login form                                                         | Login completes in under 2 seconds                |               |        |
+| AUTH-PERF-005   | Password reset email sent within expected time           | Valid email provided    | 1. Request password reset                                                             | Email sent within 2–5 seconds                     |               |        |
+| AUTH-PERF-006   | Google login completes quickly                           | Google account linked   | 1. Click "Login with Google" and authenticate                                         | Logged in within 2–3 seconds                      |               |        |
+| AUTH-PERF-007   | Slack login completes quickly                            | Slack integration ready | 1. Click "Login with Slack" and authenticate                                          | Logged in within 2–3 seconds                      |               |        |
+| AUTH-PERF-008   | 2FA submission responds quickly                          | 2FA enabled             | 1. Enter correct 2FA code <br> 2. Submit                                              | 2FA validation within 1–2 seconds                 |               |        |
+| AUTH-PERF-009   | System handles multiple concurrent login requests        | Simulated 20 users      | 1. Simulate 20 logins at the same time                                                | No crash, all sessions succeed                    |               |        |
+| AUTH-PERF-010   | System handles multiple concurrent registration requests | Simulated 20 users      | 1. Simulate 20 signups at the same time                                               | No crash, duplicates handled gracefully           |               |        |
+

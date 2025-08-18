@@ -1,7 +1,17 @@
-# (Test Type) – (Module Name)
+# Positive Test Cases – Authentication Module
 
-| ID                          | Title                                       | Precondition                        | Steps                                                         | Expected Result                           | Actual Result | Status |
-|-----------------------------|---------------------------------------------|-------------------------------------|---------------------------------------------------------------|-------------------------------------------|---------------|--------|
-| (ModuleName)-(TestType)-XXX |       |         |  |  |               |        |
-
-
+| ID            | Title                                              | Precondition                | Steps                                                                                 | Expected Result                          | Actual Result | Status |
+|---------------|----------------------------------------------------|-----------------------------|---------------------------------------------------------------------------------------|------------------------------------------|---------------|--------|
+| AUTH-POS-001  | Register as Owner with valid data                  | User not registered         | 1. Go to Sign Up <br> 2. Fill in valid name, email, password <br> 3. Click Sign Up    | User account created, onboarding begins  |               |        |
+| AUTH-POS-002  | Register as Owner via Google                       | Google account exists       | 1. Go to Sign Up <br> 2. Click "Continue with Google"                                 | User registered and redirected           |               |        |
+| AUTH-POS-003  | Register as Member via email invitation            | Invitation received         | 1. Click invitation link <br> 2. Fill required fields <br> 3. Click Sign Up           | Member account created, setup page shown |               |        |
+| AUTH-POS-004  | Register as Member via Slack                       | Slack integration enabled   | 1. Click Slack invite link <br> 2. Authenticate via Slack                             | Member account created                   |               |        |
+| AUTH-POS-005  | Login with valid credentials                       | User registered             | 1. Go to Login <br> 2. Enter email and password <br> 3. Click Login                   | Dashboard loads                          |               |        |
+| AUTH-POS-007  | Login via Slack                                    | Slack integration available | 1. Go to Login <br> 2. Click "Continue with Slack"                                    | Dashboard loads                          |               |        |
+| AUTH-POS-008  | Two-Factor Authentication enabled                  | 2FA enabled for user        | 1. Enter credentials <br> 2. Enter valid 2FA code                                     | Dashboard loads                          |               |        |
+| AUTH-POS-009  | Remember Me checkbox works                         | User checks "Remember Me"   | 1. Check Remember Me <br> 2. Login <br> 3. Close and reopen browser                   | User still logged in                     |               |        |
+| AUTH-POS-010  | Password reset via Forgot Password                 | User registered             | 1. Click "Forgot Password" <br> 2. Enter email <br> 3. Click Send                     | Reset link sent                          |               |        |
+| AUTH-POS-011  | Show/hide password toggle displays password        | User on login or signup     | 1. Click eye icon in password field                                                   | Password becomes visible                 |               |        |
+| AUTH-POS-012  | All registration fields accept correct formats     | On registration page        | 1. Fill in fields using valid values                                                  | No validation errors shown               |               |        |
+| AUTH-POS-013  | Responsive form on mobile                          | Any mobile screen           | 1. Open login/registration page on mobile                                             | Layout adjusts for small screen          |               |        |
+| AUTH-POS-014  | Keyboard navigation works on login page            | User on login page          | 1. Use Tab to move between fields                                                     | Focus moves logically                    |               |        |
