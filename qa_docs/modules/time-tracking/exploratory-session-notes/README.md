@@ -88,4 +88,4 @@ Test adding and editing manual Break entries in Time Tracking.
 
 🧑‍💻 Author
 
-Name QA Engineer
+"Name" QA Engineer

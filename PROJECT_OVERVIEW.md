@@ -1,9 +1,9 @@
 # WebWorkQA 📋
 
-**Modular QA Documentation for the WebWork Platform**
+**Modular Quality Assurance Documentation for the WebWork Time Tracking Platform**
 
-This repository contains structured, modular QA documentation for the **Time Tracking module** of the WebWork platform.  
-It follows a real-world QA approach — from manual testing to automation — and serves as a portfolio-ready example of scalable test documentation.
+This repository contains complete, scalable, and modular QA documentation for manual and automated testing of the WebWork platform.
+It demonstrates best practices for both individual and collaborative QA work.
 
 ---
 
@@ -21,13 +21,13 @@ It follows a real-world QA approach — from manual testing to automation — an
         - api-test-cases/
           - positive/
           - negative/
-          - performace/
+          - performance/
           - security/
           - edge-cases/
         - postman_collection/
           - positive/
           - negative/
-          - performace/
+          - performance/
           - security/
           - edge-cases/
         - api-checklist.md
@@ -41,7 +41,7 @@ It follows a real-world QA approach — from manual testing to automation — an
         - non-functional-checklists.md
       - exploratory-session-notes/
       - requirements-review-comments/
-      - sql-beckend-checks/
+      - sql-backend-checks/
       - test-cases/
         - positive.md
         - negative-scenarios.md
@@ -57,7 +57,7 @@ It follows a real-world QA approach — from manual testing to automation — an
   - templates/
   - README.md
 ROADMAP.md
-README.md
+PROJECT_OVERVIEW.md
 
 ---
 
@@ -77,26 +77,29 @@ README.md
 
 ## 🧪 Tools Used
 
+- [✔] **Manual Testing**
+- [✔] **Postman** – REST API testing
+- [✔] **Swagger** – API inspection and verification
+- [✔] **DevTools** – Debugging, inspecting
 - [✔] **Playwright (Python)** – UI automation
-- [✔] **PyTest** – API automation (planned)
-- [✔] **Postman** – manual API testing
-- [✔] **Markdown** – for documentation
-- [✔] **Git/GitHub** – version control
+- [✔] **PyTest** – API automation 
+- [✔] **Markdown** – Documentation
+- [✔] **Git/GitHub** – Version control
 
 ---
 
-## 🧭 Purpose
+## 🔄 Workflow & Guidelines
 
-- Showcase realistic QA documentation
-- Demonstrate hybrid manual+automated testing
-- Present a modular structure for scalable QA teams
-- Help hiring managers evaluate practical QA skills
+- All features are documented and tested incrementally by module
+- Manual comes first: test cases, checklists, bugs, API
+- Then: automation (UI + API)
+- All documentation lives in Markdown for portability
 
 ---
 
 ## 👨‍💻 Author
 
 **Vahe Hunanyan**  
-QA Engineer (Manual + Automation)  
+QA Engineer | Manual + Automation  
 Email: qatesting463@gmail.com  
 Open to feedback and collaboration!
